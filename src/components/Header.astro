@@ -1,0 +1,87 @@
+---
+import { Menu } from "@lucide/astro";
+---
+
+<div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <a href="/" class="btn btn-ghost text-xl">
+      kiritish.uz
+    </a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal">
+      <li>
+        <a href="#" class="btn btn-ghost text-xl">
+          Samsung
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-ghost text-xl">
+          Android
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-ghost text-xl">
+          iOS
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-ghost text-xl">
+          Windows
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-ghost text-xl">
+          MacOS
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-ghost text-xl">
+          Linux
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <Menu />
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm menu-vertical dropdown-content z-1 mt-12 rounded-box shadow bg-base-100 p-2"
+      >
+        <li>
+          <a href="#" class="btn btn-ghost text-xl">
+            Samsung
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-ghost text-xl">
+            Android
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-ghost text-xl">
+            iOS
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-ghost text-xl">
+            Windows
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-ghost text-xl">
+            MacOS
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-ghost text-xl">
+            Linux
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

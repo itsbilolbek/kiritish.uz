@@ -1,2 +1,5 @@
+/*! 🌼 daisyUI 5.7.42 */
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  logs: false;
+}
