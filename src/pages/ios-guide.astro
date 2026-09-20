@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import iosS from "../assets/ios-ş.png";
+import iosO from "../assets/ios-ö.png";
+import iosC from "../assets/ios-ç.png";
+import iosG from "../assets/ios-ğ.png";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
+const images = [
+  { src: iosS, alt: "iOS klaviaturasi: Ş harfi" },
+  { src: iosO, alt: "iOS klaviaturasi: Ö harfi" },
+  { src: iosC, alt: "iOS klaviaturasi: Ç harfi" },
+  { src: iosG, alt: "iOS klaviaturasi: Ğ harfi" },
+];
+---
+
+<Layout>
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 p-4">
+    <h1 class="text-3xl">iOSʼda klaviaturani ishlatish usuli</h1>
+    <div class="swiper mySwiper w-full max-w-xl rounded-box md:my-8">
+      <div class="swiper-wrapper">
+        {images.map((img, i) => (
+          <div class="swiper-slide">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-64 md:h-96 object-contain rounded-box"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p>
+      iOSʼning klaviaturasining oʻzida Ş, Ö, Ç va Ğ harflarini kiritish imkoni
+      mavjud. Hech qanday ilova oʻrnatish talab qilinmaydi.
+    </p>
+    <ul class="list-disc list-inside space-y-1.5">
+      <li>
+        <b>Ş harfini</b> kiritish uchun <kbd class="kbd">S</kbd> tugmasini bosib
+        turing va Ş harfini tanlang.
+      </li>
+      <li>
+        <b>Ö harfini</b> kiritish uchun <kbd class="kbd">O</kbd> tugmasini bosib
+        turing va Ö harfini tanlang.
+      </li>
+      <li>
+        <b>Ç harfini</b> kiritish uchun <kbd class="kbd">C</kbd> tugmasini bosib
+        turing va Ç harfini tanlang.
+      </li>
+      <li>
+        <b>Ğ harfini</b> kiritish uchun <kbd class="kbd">G</kbd> tugmasini bosib
+        turing va Ğ harfini tanlang.
+      </li>
+    </ul>
+  </div>
+</Layout>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".mySwiper", {
+      modules: [Autoplay, Pagination],
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>
