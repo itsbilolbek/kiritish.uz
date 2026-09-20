@@ -1,0 +1,160 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Download } from "@lucide/astro";
+import { Image } from "astro:assets";
+import windowsLayout from "../assets/windows-keyboard-layout.png";
+import windowsLanguageSelect from "../assets/windows-language-select.png";
+---
+
+<Layout>
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 p-4">
+    <h1 class="text-3xl mt-4">Windowsʼda klaviaturani oʻrnatish usuli</h1>
+    <Image
+      src={windowsLayout}
+      alt="Windows klaviatura terilmasi"
+      class="self-center my-4"
+    />
+    <a
+      class="self-center my-4 btn btn-lg btn-primary btn-wide gap-2"
+      href="/setup.exe"
+      download="setup.exe"
+    >
+      <Download class="w-6 h-6" />
+      Yuklab olish
+    </a>
+    <h2 class="text-2xl">Klaviatura xususiyatlari</h2>
+
+    <ul class="list-inside list-disc space-y-1.5">
+      <li>
+        <b>QWERTY</b> terilma asosida qurilgan va oʻrganish oson.
+      </li>
+      <li>
+        Klaviaturada <b>Şş</b>, <b>Çç</b>, <b>Öö</b> va <b>Ğğ</b> belgilarini
+        kiritish qulay va <kbd class="kbd">AltGr</kbd> bosish talab etilmaydi.
+      </li>
+      <li>
+        <span>
+          Ushbu klaviatura terilmasi koʻproq belgilarni kiritish uchun{" "}
+          <kbd class="kbd">AltGr</kbd> (odatda oʻng <kbd class="kbd">Alt</kbd>{" "}
+          tugmasi) tugmasidan foydalandi:
+        </span>
+      </li>
+    </ul>
+
+    <h3 class="text-xl mt-2">Tugmalar birikmasi</h3>
+    <ul class="list-inside list-disc space-y-1.5">
+      <li>
+        <b>ş harfini</b> kiritish uchun <kbd class="kbd">;</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>ç harfini</b> kiritish uchun <kbd class="kbd">'</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>ö harfini</b> kiritish uchun <kbd class="kbd">[</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>ğ harfini</b> kiritish uchun <kbd class="kbd">]</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>Tutuq belgisini</b> kiritish uchun <kbd class="kbd">\</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        Eski alifbodagi Oʻ va Gʻ harflarida ishlatiladigan teskari vergulni (
+        <a
+          class="link-primary"
+          href="https://uz.wikipedia.org/wiki/%CA%BB_(belgi)"
+        >
+          ʻOkina belgisini
+        </a>
+        ) kiritish uchun <kbd class="kbd">Shift</kbd>+<kbd class="kbd">\</kbd>{" "}
+        kombinatsiyasini bosing.
+      </li>
+      <li>
+        Nuqta vergulni <b>(;)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
+        <kbd class="kbd">;</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Ikki nuqtani <b>(:)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
+        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">;</kbd> kombinatsiyasini
+        bosing.
+      </li>
+      <li>
+        Apostrofni <b>(')</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
+        <kbd class="kbd">'</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Qoʻshtirnoqni <b>(")</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
+        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">'</kbd> kombinatsiyasini
+        bosing.
+      </li>
+      <li>
+        Chap kvadrat qavsni <b>([)</b> kiritish uchun{" "}
+        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">[</kbd> kombinatsiyasini
+        bosing.
+      </li>
+      <li>
+        Chap figurali qavsni <b>({"{"})</b> kiritish uchun{" "}
+        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">Shift</kbd> +{" "}
+        <kbd class="kbd">[</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Oʻng kvadrat qavsni <b>(])</b> kiritish uchun{" "}
+        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">]</kbd> kombinatsiyasini
+        bosing.
+      </li>
+      <li>
+        Oʻng figurali qavsni <b>({"}"})</b> kiritish uchun{" "}
+        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">Shift</kbd> +{" "}
+        <kbd class="kbd">]</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Teskari sleshni <b>(\)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
+        <kbd class="kbd">\</kbd> (tutuq belgisi) kombinatsiyasini bosing.
+      </li>
+      <li>
+        Tik chiziqni <b>(|)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
+        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">\</kbd> (tutuq belgisi)
+        kombinatsiyasini bosing.
+      </li>
+    </ul>
+    <h2 class="text-2xl mt-4">Oʻrnatish usuli</h2>
+    <p>
+      <ol class="list-decimal list-inside space-y-1.5">
+        <li>
+          <a
+            class="font-mono link-primary"
+            href="https://github.com/itsbilolbek/new-uzbek-keyboard/releases/download/v0.1/setup.exe"
+          >
+            setup.exe
+          </a>{" "}
+          faylini yuklab oling.
+        </li>
+        <li>
+          <span class="font-mono">setup.exe</span> faylini ishga tushuring va
+          klaviatura terilmasini oʻrnating
+        </li>
+        <li>
+          Til tanlash menyusida <b>Uzbek - new keyboard</b> variantini tanlang.
+        </li>
+      </ol>
+    </p>
+    <Image
+      class="self-center"
+      src={windowsLanguageSelect}
+      alt="Windows til tanlash menyusi"
+    />
+    <a
+      class="self-center my-4 btn btn-lg btn-primary btn-wide gap-2"
+      href="/setup.exe"
+      download="setup.exe"
+    >
+      <Download class="w-6 h-6" />
+      Yuklab olish
+    </a>
+  </div>
+</Layout>
