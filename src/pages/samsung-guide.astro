@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import samsungS from "../assets/samsung-ş.png";
+import samsungO from "../assets/samsung-ö.png";
+import samsungC from "../assets/samsung-ç.png";
+import samsungG from "../assets/samsung-ğ.png";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
+const images = [
+  { src: samsungS, alt: "Samsung klaviaturasi: Ş harfi" },
+  { src: samsungO, alt: "Samsung klaviaturasi: Ö harfi" },
+  { src: samsungC, alt: "Samsung klaviaturasi: Ç harfi" },
+  { src: samsungG, alt: "Samsung klaviaturasi: Ğ harfi" },
+];
+---
+
+<Layout>
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 p-4">
+    <h1 class="text-3xl">Samsungʼda klaviaturani ishlatish usuli</h1>
+    <div class="swiper mySwiper w-full max-w-xl rounded-box md:my-8">
+      <div class="swiper-wrapper">
+        {images.map((img, i) => (
+          <div class="swiper-slide">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-64 md:h-96 object-contain rounded-box"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p>
+      Samsungʼning klaviaturasining oʻzida Ş, Ö, Ç va Ğ harflarini kiritish
+      imkoni mavjud. Hech qanday ilova oʻrnatish talab qilinmaydi.
+    </p>
+    <ul class="list-disc list-inside space-y-1.5">
+      <li>
+        <b>Ş harfini</b> kiritish uchun <kbd class="kbd">S</kbd> tugmasini bosib
+        turing va Ş harfini tanlang.
+      </li>
+      <li>
+        <b>Ö harfini</b> kiritish uchun <kbd class="kbd">O</kbd> tugmasini bosib
+        turing va Ö harfini tanlang.
+      </li>
+      <li>
+        <b>Ç harfini</b> kiritish uchun <kbd class="kbd">C</kbd> tugmasini bosib
+        turing va Ç harfini tanlang.
+      </li>
+      <li>
+        <b>Ğ harfini</b> kiritish uchun <kbd class="kbd">G</kbd> tugmasini bosib
+        turing va Ğ harfini tanlang.
+      </li>
+    </ul>
+  </div>
+</Layout>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".mySwiper", {
+      modules: [Autoplay, Pagination],
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>
