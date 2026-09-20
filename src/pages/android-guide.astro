@@ -1,0 +1,147 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import gboardS from "../assets/gboard-ş.png";
+import gboardO from "../assets/gboard-ö.png";
+import gboardC from "../assets/gboard-ç.png";
+import gboardG from "../assets/gboard-ğ.png";
+import gboardSettings1 from "../assets/gboard-1.png";
+import gboardSettings2 from "../assets/gboard-2.png";
+import gboardSettings3 from "../assets/gboard-3.png";
+import gboardSettings4 from "../assets/gboard-4.png";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
+const images = [
+  { src: gboardS, alt: "Gboard klaviaturasi: Ş harfi" },
+  { src: gboardO, alt: "Gboard klaviaturasi: Ö harfi" },
+  { src: gboardC, alt: "Gboard klaviaturasi: Ç harfi" },
+  { src: gboardG, alt: "Gboard klaviaturasi: Ğ harfi" },
+];
+
+const gboardSettings = [
+  { src: gboardSettings1, alt: "Gboard klaviaturasi: bosh menyu" },
+  { src: gboardSettings2, alt: "Gboard klaviaturasi: tillar menyusi" },
+  {
+    src: gboardSettings3,
+    alt: "Gboard klaviaturasi: klaviatura qoʻshish menyusi",
+  },
+  { src: gboardSettings4, alt: "Gboard klaviaturasi: Oʻzbek (lotin) menyusi" },
+];
+---
+
+<Layout>
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 p-4">
+    <h1 class="text-3xl">Androidʼda klaviaturani ishlatish usuli</h1>
+    <p>
+      Android qurilmalarida Ş, Ö, Ç va Ğ harflarini kiritishning eng oson
+      vositasi — bu <b>Gboard</b> klaviaturasidir. Odatda Gboard klaviaturasi
+      Android qurilmalarida oʻrnatilgan boʻladi. Gboard klaviaturasini{" "}
+      <a
+        href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin"
+        class="link-primary"
+      >
+        Play Market
+      </a>
+      ʼdan oʻrnatishingiz mumkin. Ş, Ö, Ç va Ğ harflarini kiritish uchun Gboard
+      sozlamalarida Oʼzbek tilini oʻrnatishingiz lozim:
+    </p>
+    <div class="swiper mySwiper2 w-full max-w-xl rounded-box md:my-8">
+      <div class="swiper-wrapper">
+        {gboardSettings.map((img, i) => (
+          <div class="swiper-slide">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-128 object-contain rounded-box"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <ol class="list-decimal list-inside space-y-1.5">
+      <li>
+        Gboard sozlamalarini oching va <b>Tillar</b> boʻlimiga oʻting.
+      </li>
+      <li>
+        <b>Klaviatura qoʻshish</b> tugmasini bosing va <b>Oʻzbek (lotin)</b>{" "}
+        opsiyasini tanlang.
+      </li>
+      <li>
+        <b>Tayyor</b> tugmasini bosing.
+      </li>
+    </ol>
+
+    <h2 class="text-2xl mt-4">Harflarni kiritish</h2>
+    <div class="swiper mySwiper w-full max-w-xl rounded-box md:my-8">
+      <div class="swiper-wrapper">
+        {images.map((img, i) => (
+          <div class="swiper-slide">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-64 md:h-96 object-contain rounded-box"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <ul class="list-disc list-inside space-y-1.5">
+      <li>
+        <b>Ş harfini</b> kiritish uchun <kbd class="kbd">S</kbd> tugmasini bosib
+        turing va Ş harfini tanlang.
+      </li>
+      <li>
+        <b>Ö harfini</b> kiritish uchun <kbd class="kbd">O</kbd> tugmasini bosib
+        turing va Ö harfini tanlang.
+      </li>
+      <li>
+        <b>Ç harfini</b> kiritish uchun <kbd class="kbd">C</kbd> tugmasini bosib
+        turing va Ç harfini tanlang.
+      </li>
+      <li>
+        <b>Ğ harfini</b> kiritish uchun <kbd class="kbd">G</kbd> tugmasini bosib
+        turing va Ğ harfini tanlang.
+      </li>
+    </ul>
+  </div>
+</Layout>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".mySwiper", {
+      modules: [Autoplay, Pagination],
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".mySwiper2", {
+      modules: [Autoplay, Pagination],
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>
