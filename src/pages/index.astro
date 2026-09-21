@@ -1,5 +1,62 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import windowsLogo from "../assets/windows11.svg";
+import androidLogo from "../assets/android.svg";
+import linuxLogo from "../assets/linux-mono.svg";
+import samsungLogo from "../assets/samsung.svg";
+import macosLogo from "../assets/macos.svg";
+import iosLogo from "../assets/ios.svg";
+
+const cards = [
+  {
+    logo: windowsLogo,
+    alt: "Windows logosi",
+    text: "Windows",
+    link: "/windows-guide",
+  },
+  { logo: linuxLogo, alt: "Linux logosi", text: "Linux", link: "/linux-guide" },
+  { logo: macosLogo, alt: "macOS logosi", text: "macOS", link: "/macos-guide" },
+  {
+    logo: samsungLogo,
+    alt: "Samsung logosi",
+    text: "Samsung",
+    link: "/samsung-guide",
+  },
+  {
+    logo: androidLogo,
+    alt: "Android logosi",
+    text: "Android",
+    link: "/android-guide",
+  },
+  { logo: iosLogo, alt: "iOS logosi", text: "iOS", link: "/ios-guide" },
+];
 ---
 
-<Layout />
+<Layout>
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-center p-4">
+    <p class="p-4 md:text-xl">
+      Qurilmangizda Ş, Ç, Ö va Ğ harflarini kiritish yoʻlini qidiryapsizmi?
+      Sizni qiziqtirayotgan platformani tanlang:
+    </p>
+
+    <div class="grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 md:grid-flow-row md:grid-cols-3 md:grid-rows-none">
+      {cards.map((card, i) => (
+        <a href={card.link}>
+          <div class="card bg-base-200 flex aspect-square w-full items-center justify-center shadow-sm">
+            <figure class="px-10 pt-10">
+              <Image
+                src={card.logo}
+                alt={card.alt}
+                class:list={"w-5/6 h-auto max-h-24 object-contain"}
+              />
+            </figure>
+            <div class="card-body link-primary text-center md:text-xl">
+              {card.text}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>
