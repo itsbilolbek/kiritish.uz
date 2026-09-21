@@ -48,21 +48,21 @@ const gboardSettings = [
       ʼdan oʻrnatishingiz mumkin. Ş, Ö, Ç va Ğ harflarini kiritish uchun Gboard
       sozlamalarida Oʼzbek tilini oʻrnatishingiz lozim:
     </p>
-    <div class="swiper mySwiper2 w-full max-w-xl rounded-box md:my-8">
+    <div class="swiper mySwiper2 rounded-box w-full max-w-xl md:my-8">
       <div class="swiper-wrapper">
         {gboardSettings.map((img, i) => (
           <div class="swiper-slide">
             <Image
               src={img.src}
               alt={img.alt}
-              class="w-full h-128 object-contain rounded-box"
+              class="rounded-box h-128 w-full object-contain"
             />
           </div>
         ))}
       </div>
       <div class="swiper-pagination"></div>
     </div>
-    <ol class="list-decimal list-inside space-y-1.5">
+    <ol class="list-inside list-decimal space-y-1.5">
       <li>
         Gboard sozlamalarini oching va <b>Tillar</b> boʻlimiga oʻting.
       </li>
@@ -75,22 +75,22 @@ const gboardSettings = [
       </li>
     </ol>
 
-    <h2 class="text-2xl mt-4">Harflarni kiritish</h2>
-    <div class="swiper mySwiper w-full max-w-xl rounded-box md:my-8">
+    <h2 class="mt-4 text-2xl">Harflarni kiritish</h2>
+    <div class="swiper mySwiper rounded-box w-full max-w-xl md:my-8">
       <div class="swiper-wrapper">
         {images.map((img, i) => (
           <div class="swiper-slide">
             <Image
               src={img.src}
               alt={img.alt}
-              class="w-full h-64 md:h-96 object-contain rounded-box"
+              class="rounded-box h-64 w-full object-contain md:h-96"
             />
           </div>
         ))}
       </div>
       <div class="swiper-pagination"></div>
     </div>
-    <ul class="list-disc list-inside space-y-1.5">
+    <ul class="list-inside list-disc space-y-1.5">
       <li>
         <b>Ş harfini</b> kiritish uchun <kbd class="kbd">S</kbd> tugmasini bosib
         turing va Ş harfini tanlang.

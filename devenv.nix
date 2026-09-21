@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  packages = with pkgs; [
+    rustywind
+  ];
+
   languages.javascript = {
     enable = true;
     corepack.enable = true;

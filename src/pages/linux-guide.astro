@@ -7,11 +7,11 @@ import windowsLayout from "../assets/windows-keyboard-layout.png";
 
 <Layout>
   <div class="mx-auto flex max-w-7xl flex-col gap-2 p-4">
-    <h1 class="text-3xl mt-4">Linuxʼda klaviaturani oʻrnatish usuli</h1>
+    <h1 class="mt-4 text-3xl">Linuxʼda klaviaturani oʻrnatish usuli</h1>
     <Image
       src={windowsLayout}
       alt="Windows klaviatura terilmasi"
-      class="self-center my-4"
+      class="my-4 self-center"
     />
     <h2 class="text-2xl">Klaviatura xususiyatlari</h2>
 
@@ -32,7 +32,7 @@ import windowsLayout from "../assets/windows-keyboard-layout.png";
       </li>
     </ul>
 
-    <h3 class="text-xl mt-2">Tugmalar birikmasi</h3>
+    <h3 class="mt-2 text-xl">Tugmalar birikmasi</h3>
     <ul class="list-inside list-disc space-y-1.5">
       <li>
         <b>ş harfini</b> kiritish uchun <kbd class="kbd">;</kbd> tugmasini
@@ -113,10 +113,10 @@ import windowsLayout from "../assets/windows-keyboard-layout.png";
         kombinatsiyasini bosing.
       </li>
     </ul>
-    <h2 class="text-2xl mt-4">Oʻrnatish usuli</h2>
+    <h2 class="mt-4 text-2xl">Oʻrnatish usuli</h2>
     <ol class="list-inside list-decimal space-y-1.5">
       <li>
-        <a href="/uz" class="font-mono link-primary" download="uz">
+        <a href="/uz" class="link-primary font-mono" download="uz">
           uz
         </a>{" "}
         faylini yuklab oling.
@@ -126,7 +126,7 @@ import windowsLayout from "../assets/windows-keyboard-layout.png";
         yuklab olgan fayl bilan almashtiring. Eski{" "}
         <span class="font-mono">uz</span> faylini zaxiralash tavsiya etiladi.{" "}
         <br />
-        <div class="mockup-code w-full my-2">
+        <div class="mockup-code my-2 w-full">
           <pre data-prefix="$"><code>sudo mv ~/Downloads/uz /usr/share/X11/xkb/symbols/uz</code></pre>
         </div>
       </li>
@@ -139,11 +139,11 @@ import windowsLayout from "../assets/windows-keyboard-layout.png";
       </li>
     </ol>
     <a
-      class="self-center my-4 btn btn-lg btn-primary btn-wide gap-2"
+      class="btn btn-lg btn-primary btn-wide my-4 gap-2 self-center"
       href="/uz"
       download="uz"
     >
-      <Download class="w-6 h-6" />
+      <Download class="h-6 w-6" />
       Yuklab olish
     </a>
   </div>

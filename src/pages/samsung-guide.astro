@@ -21,14 +21,14 @@ const images = [
 <Layout>
   <div class="mx-auto flex max-w-7xl flex-col gap-4 p-4">
     <h1 class="text-3xl">Samsungʼda klaviaturani ishlatish usuli</h1>
-    <div class="swiper mySwiper w-full max-w-xl rounded-box md:my-8">
+    <div class="swiper mySwiper rounded-box w-full max-w-xl md:my-8">
       <div class="swiper-wrapper">
         {images.map((img, i) => (
           <div class="swiper-slide">
             <Image
               src={img.src}
               alt={img.alt}
-              class="w-full h-64 md:h-96 object-contain rounded-box"
+              class="rounded-box h-64 w-full object-contain md:h-96"
             />
           </div>
         ))}
@@ -36,10 +36,10 @@ const images = [
       <div class="swiper-pagination"></div>
     </div>
     <p>
-      Samsungʼning klaviaturasining oʻzida Ş, Ö, Ç va Ğ harflarini kiritish
-      imkoni mavjud. Hech qanday ilova oʻrnatish talab qilinmaydi.
+      Samsung klaviaturasining oʻzida Ş, Ö, Ç va Ğ harflarini kiritish imkoni
+      mavjud. Hech qanday ilova oʻrnatish talab qilinmaydi.
     </p>
-    <ul class="list-disc list-inside space-y-1.5">
+    <ul class="list-inside list-disc space-y-1.5">
       <li>
         <b>Ş harfini</b> kiritish uchun <kbd class="kbd">S</kbd> tugmasini bosib
         turing va Ş harfini tanlang.
