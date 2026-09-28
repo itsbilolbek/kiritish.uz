@@ -43,14 +43,11 @@ import { Menu } from "@lucide/astro";
     </ul>
   </div>
   <div class="navbar-end">
-    <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+    <details class="dropdown dropdown-end">
+      <summary role="button" class="btn btn-ghost lg:hidden">
         <Menu />
-      </div>
-      <ul
-        tabindex="-1"
-        class="menu menu-sm menu-vertical dropdown-content rounded-box bg-base-100 z-30 mt-12 p-2 shadow"
-      >
+      </summary>
+      <ul class="menu menu-sm menu-vertical dropdown-content rounded-box bg-base-100 z-30 mt-4 p-2 shadow">
         <li>
           <a href="/samsung-guide" class="btn btn-ghost text-xl">
             Samsung
@@ -82,6 +79,6 @@ import { Menu } from "@lucide/astro";
           </a>
         </li>
       </ul>
-    </div>
+    </details>
   </div>
 </div>
