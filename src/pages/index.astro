@@ -42,18 +42,19 @@ const cards = [
 
     <div class="grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 md:grid-flow-row md:grid-cols-3 md:grid-rows-none">
       {cards.map((card, i) => (
-        <a href={card.link}>
-          <div class="card bg-base-200 flex aspect-square w-full items-center justify-center shadow-sm">
-            <figure class="px-10 pt-10">
-              <Image
-                src={card.logo}
-                alt={card.alt}
-                class:list={"w-5/6 h-auto max-h-24 object-contain"}
-              />
-            </figure>
-            <div class="card-body link-primary text-center md:text-xl">
-              {card.text}
-            </div>
+        <a
+          href={card.link}
+          class="card bg-base-200 flex aspect-square w-full items-center justify-center shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <figure class="flex-1 px-10 pt-10 p-4 flex items-center justify-center w-full">
+            <Image
+              src={card.logo}
+              alt={card.alt}
+              class:list={"w-5/6 h-auto max-h-24 object-contain"}
+            />
+          </figure>
+          <div class="flex-none card-body p-4 md:p-8 link-primary text-center md:text-xl">
+            {card.text}
           </div>
         </a>
       ))}
