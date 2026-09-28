@@ -1,9 +1,231 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Download } from "@lucide/astro";
+import { Image } from "astro:assets";
+import windowsLayout from "../assets/windows-keyboard-layout.png";
+import macos1 from "../assets/macos-1.png";
+import macos2 from "../assets/macos-2.png";
+import macos3 from "../assets/macos-3.png";
+import macos4 from "../assets/macos-4.png";
+import macos5 from "../assets/macos-5.png";
+import macos6 from "../assets/macos-6.png";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
+const images = [
+  { src: macos1, alt: "MacOS settings" },
+  { src: macos2, alt: "MacOS Input Sources" },
+  { src: macos3, alt: "MacOS browse input sources" },
+  { src: macos4, alt: "MacOS browse input sources 2" },
+  { src: macos5, alt: "MacOS Input Sources 2" },
+  { src: macos6, alt: "MacOS language select menu" },
+];
 ---
 
 <Layout>
-  <div class="max-w-7xl p-4 text-center text-2xl">
-    Bu sahifa ustidan ish olib borilmoqda. Iltimos, keyinroq tekshirib koʻring.
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 p-4">
+    <h1 class="mt-4 text-3xl">MacOSʼda klaviaturani oʻrnatish usuli</h1>
+    <Image
+      src={windowsLayout}
+      alt="Windows klaviatura terilmasi"
+      class="my-4 self-center"
+    />
+    <a
+      class="btn btn-lg btn-primary btn-wide my-4 gap-2 self-center"
+      href="/ozbekcha-yangi-alifbo.keylayout"
+      download="ozbekcha-yangi-alifbo.keylayout"
+    >
+      <Download class="h-6 w-6" />
+      Yuklab olish
+    </a>
+    <h2 class="text-2xl">Klaviatura xususiyatlari</h2>
+
+    <ul class="list-inside list-disc space-y-1.5">
+      <li>
+        <b>QWERTY</b> terilma asosida qurilgan va oʻrganish oson.
+      </li>
+      <li>
+        Klaviaturada <b>Şş</b>, <b>Çç</b>, <b>Öö</b> va <b>Ğğ</b> belgilarini
+        kiritish qulay va <kbd class="kbd">AltGr</kbd> bosish talab etilmaydi.
+      </li>
+      <li>
+        <span>
+          Ushbu klaviatura terilmasi koʻproq belgilarni kiritish uchun{" "}
+          <kbd class="kbd">Option</kbd> tugmasidan foydalandi:
+        </span>
+      </li>
+    </ul>
+
+    <h3 class="mt-2 text-xl">Tugmalar birikmasi</h3>
+    <ul class="list-inside list-disc space-y-1.5">
+      <li>
+        <b>ş harfini</b> kiritish uchun <kbd class="kbd">;</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>ç harfini</b> kiritish uchun <kbd class="kbd">'</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>ö harfini</b> kiritish uchun <kbd class="kbd">[</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>ğ harfini</b> kiritish uchun <kbd class="kbd">]</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        <b>Tutuq belgisini</b> kiritish uchun <kbd class="kbd">\</kbd> tugmasini
+        bosing.
+      </li>
+      <li>
+        Eski alifbodagi Oʻ va Gʻ harflarida ishlatiladigan teskari vergulni (
+        <a
+          class="link-primary"
+          href="https://uz.wikipedia.org/wiki/%CA%BB_(belgi)"
+        >
+          ʻOkina belgisini
+        </a>
+        ) kiritish uchun <kbd class="kbd">Shift</kbd>+<kbd class="kbd">\</kbd>{" "}
+        kombinatsiyasini bosing.
+      </li>
+      <li>
+        Nuqta vergulni <b>(;)</b> kiritish uchun <kbd class="kbd">Option</kbd> +{" "}
+        <kbd class="kbd">;</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Ikki nuqtani <b>(:)</b> kiritish uchun <kbd class="kbd">Option</kbd> +{" "}
+        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">;</kbd> kombinatsiyasini
+        bosing.
+      </li>
+      <li>
+        Apostrofni <b>(')</b> kiritish uchun <kbd class="kbd">Option</kbd> +{" "}
+        <kbd class="kbd">'</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Qoʻshtirnoqni <b>(")</b> kiritish uchun <kbd class="kbd">Option</kbd> +{" "}
+        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">'</kbd> kombinatsiyasini
+        bosing.
+      </li>
+      <li>
+        Chap kvadrat qavsni <b>([)</b> kiritish uchun{" "}
+        <kbd class="kbd">Option</kbd> + <kbd class="kbd">[</kbd>{" "}
+        kombinatsiyasini bosing.
+      </li>
+      <li>
+        Chap figurali qavsni <b>({"{"})</b> kiritish uchun{" "}
+        <kbd class="kbd">Option</kbd> + <kbd class="kbd">Shift</kbd> +{" "}
+        <kbd class="kbd">[</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Oʻng kvadrat qavsni <b>(])</b> kiritish uchun{" "}
+        <kbd class="kbd">Option</kbd> + <kbd class="kbd">]</kbd>{" "}
+        kombinatsiyasini bosing.
+      </li>
+      <li>
+        Oʻng figurali qavsni <b>({"}"})</b> kiritish uchun{" "}
+        <kbd class="kbd">Option</kbd> + <kbd class="kbd">Shift</kbd> +{" "}
+        <kbd class="kbd">]</kbd> kombinatsiyasini bosing.
+      </li>
+      <li>
+        Teskari sleshni <b>(\)</b> kiritish uchun <kbd class="kbd">Option</kbd>{" "}
+        + <kbd class="kbd">\</kbd> (tutuq belgisi) kombinatsiyasini bosing.
+      </li>
+      <li>
+        Tik chiziqni <b>(|)</b> kiritish uchun <kbd class="kbd">Option</kbd> +{" "}
+        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">\</kbd> (tutuq belgisi)
+        kombinatsiyasini bosing.
+      </li>
+    </ul>
+    <h2 class="mt-4 text-2xl">Oʻrnatish usuli</h2>
+
+    <div class="swiper mySwiper rounded-box w-full max-w-xl md:my-8">
+      <div class="swiper-wrapper">
+        {images.map((img, i) => (
+          <div class="swiper-slide">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              class="rounded-box w-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p>
+      <ol class="list-inside list-decimal space-y-1.5">
+        <li>
+          <a
+            class="link-primary font-mono"
+            href="https://github.com/itsbilolbek/new-uzbek-keyboard/releases/download/v0.1/ozbekcha-yangi-alifbo.keylayout"
+            download="ozbekcha-yangi-alifbo.keylayout"
+          >
+            ozbekcha-yangi-alifbo.keylayout
+          </a>{" "}
+          faylini yuklab oling.
+        </li>
+        <li>
+          <b>Finder</b> (<kbd class="kbd">Command</kbd> +{" "}
+          <kbd class="kbd">Shift</kbd> + <kbd class="kbd">G</kbd>) ilovasini
+          oching va yuklab olingan faylni ushbu joyga koʻchiring:{" "}
+          <span class="font-mono">~/Library/Keyboard Layouts</span>
+        </li>
+        <li>
+          <b>Sozlamalarni</b> oching va <b>Keyboard</b> boʻlimiga oʻting.
+        </li>
+        <li>
+          <b>Input sources</b> boʻlimidagi <b>Edit...</b> tugmasini bosing.
+        </li>
+        <li>
+          Pastdagi chap tarafdagi <b>“+”</b> tugmasini bosing.
+        </li>
+        <li>
+          Tillar roʻyxatining eng pastiga tushing va <b>Others</b> opsiyasini
+          tanlang.
+        </li>
+        <li>
+          Oʻng tarafdagi menyudan <b>Özbekça — Yangi alifbo</b> opsiyasini
+          tanlang va <b>Add</b> tugmasini bosing.
+        </li>
+        <li>
+          <b>Done</b> tugmasini bosing.
+        </li>
+        <li>
+          MacOSʼning til tanlash menyusidan <b>Özbekça — Yangi alifbo</b>{" "}
+          opsiyasini tanlang.
+        </li>
+      </ol>
+    </p>
+    <a
+      class="btn btn-lg btn-primary btn-wide my-4 gap-2 self-center"
+      href="/ozbekcha-yangi-alifbo.keylayout"
+      download="ozbekcha-yangi-alifbo.keylayout"
+    >
+      <Download class="h-6 w-6" />
+      Yuklab olish
+    </a>
   </div>
 </Layout>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".mySwiper", {
+      modules: [Autoplay, Pagination],
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>
