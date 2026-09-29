@@ -1,35 +1,19 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import windowsLogo from "../assets/windows11.svg";
-import androidLogo from "../assets/android.svg";
-import linuxLogo from "../assets/linux-mono.svg";
-import samsungLogo from "../assets/samsung.svg";
-import macosLogo from "../assets/macos.svg";
-import iosLogo from "../assets/ios.svg";
+import windowsLogo from "../assets/windows11.svg?raw";
+import androidLogo from "../assets/android.svg?raw";
+import linuxLogo from "../assets/linux-mono.svg?raw";
+import samsungLogo from "../assets/samsung.svg?raw";
+import macosLogo from "../assets/macos.svg?raw";
+import iosLogo from "../assets/ios.svg?raw";
 
 const cards = [
-  {
-    logo: windowsLogo,
-    alt: "Windows logosi",
-    text: "Windows",
-    link: "/windows-guide",
-  },
-  { logo: linuxLogo, alt: "Linux logosi", text: "Linux", link: "/linux-guide" },
-  { logo: macosLogo, alt: "macOS logosi", text: "macOS", link: "/macos-guide" },
-  {
-    logo: samsungLogo,
-    alt: "Samsung logosi",
-    text: "Samsung",
-    link: "/samsung-guide",
-  },
-  {
-    logo: androidLogo,
-    alt: "Android logosi",
-    text: "Android",
-    link: "/android-guide",
-  },
-  { logo: iosLogo, alt: "iOS logosi", text: "iOS", link: "/ios-guide" },
+  { logo: windowsLogo, text: "Windows", link: "/windows-guide" },
+  { logo: linuxLogo, text: "Linux", link: "/linux-guide" },
+  { logo: macosLogo, text: "macOS", link: "/macos-guide" },
+  { logo: samsungLogo, text: "Samsung", link: "/samsung-guide" },
+  { logo: androidLogo, text: "Android", link: "/android-guide" },
+  { logo: iosLogo, text: "iOS", link: "/ios-guide" },
 ];
 ---
 
@@ -46,12 +30,8 @@ const cards = [
           href={card.link}
           class="card bg-base-200 flex aspect-square w-full items-center justify-center shadow-sm hover:bg-base-300 transition-colors"
         >
-          <figure class="flex-1 px-10 pt-10 p-4 flex items-center justify-center w-full">
-            <Image
-              src={card.logo}
-              alt={card.alt}
-              class:list={"w-5/6 h-auto max-h-24 object-contain"}
-            />
+          <figure class="flex-1 px-10 pt-10 p-4 flex items-center justify-center w-full fill-current text-base-content [&>svg]:w-5/6 [&>svg]:h-auto [&>svg]:max-h-24">
+            <Fragment set:html={card.logo} />
           </figure>
           <div class="flex-none card-body p-4 md:p-8 link-primary text-center md:text-xl">
             {card.text}

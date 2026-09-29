@@ -2,6 +2,7 @@
 import { Menu } from "@lucide/astro";
 import { Image } from "astro:assets";
 import githubLogo from "../assets/github.svg";
+import githubDarkLogo from "../assets/github-dark.svg";
 ---
 
 <div class="navbar bg-base-100 shadow-sm">
@@ -45,8 +46,17 @@ import githubLogo from "../assets/github.svg";
     </ul>
   </div>
   <div class="navbar-end">
-    <a href="https://github.com/itsbilolbek/kiritish.uz" class="p-4">
+    <a
+      href="https://github.com/itsbilolbek/kiritish.uz"
+      class="block dark:hidden p-4"
+    >
       <Image src={githubLogo} alt="GitHub Logo" width={32} />
+    </a>
+    <a
+      href="https://github.com/itsbilolbek/kiritish.uz"
+      class="hidden dark:block p-4"
+    >
+      <Image src={githubDarkLogo} alt="GitHub Logo" width={32} />
     </a>
     <details class="dropdown dropdown-end">
       <summary role="button" class="btn btn-ghost lg:hidden">
