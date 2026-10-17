@@ -4,6 +4,8 @@ import { Download } from "@lucide/astro";
 import { Image } from "astro:assets";
 import windowsLayout from "../assets/windows-keyboard-layout.png";
 import windowsLanguageSelect from "../assets/windows-language-select.png";
+import msDefender1 from "../assets/ms-defender-1.png";
+import msDefender2 from "../assets/ms-defender-2.png";
 ---
 
 <Layout
@@ -143,7 +145,20 @@ import windowsLanguageSelect from "../assets/windows-language-select.png";
         </li>
         <li>
           <span class="font-mono">setup.exe</span> faylini ishga tushuring va
-          klaviatura terilmasini oʻrnating
+          klaviatura terilmasini oʻrnating. <b>Qoʻshimcha maʼlumot</b> ustiga
+          bosing, soʻngra <b>Baribir ishga tushirilsin</b> tugmasini bosing.
+          <div class="flex flex-col lg:flex-row w-full items-center justify-center p-4 gap-4">
+            <Image
+              src={msDefender1}
+              alt="Miscrosoft Defender Warning"
+              class="w-full h-auto object-contain max-w-md"
+            />
+            <Image
+              src={msDefender2}
+              alt="Miscrosoft Defender Warning"
+              class="w-full h-auto object-contain max-w-md"
+            />
+          </div>
         </li>
         <li>
           Til tanlash menyusida <b>Uzbek - new keyboard</b> variantini tanlang.
