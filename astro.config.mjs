@@ -8,6 +8,15 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://kiritish.uz",
 
+  redirects: {
+    "/windows-guide": "/windows",
+    "/macos-guide": "/macos",
+    "/linux-guide": "/linux",
+    "/android-guide": "/android",
+    "/ios-guide": "/ios",
+    "/samsung-guide": "/samsung",
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
