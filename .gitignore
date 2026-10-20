@@ -25,6 +25,9 @@ dist/
 dist-ssr/
 *.local
 
+# wrangler
+.wrangler/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

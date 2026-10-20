@@ -1,0 +1,8 @@
+{
+  "name": "kiritish-uz",
+  "compatibility_date": "2026-10-20",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+}
