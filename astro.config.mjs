@@ -7,15 +7,15 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://kiritish.uz",
-  trailingSlash: "never",
+  trailingSlash: "always",
 
   redirects: {
-    "/windows-guide": "/windows",
-    "/macos-guide": "/macos",
-    "/linux-guide": "/linux",
-    "/android-guide": "/android",
-    "/ios-guide": "/ios",
-    "/samsung-guide": "/samsung",
+    "/windows-guide": "/windows/",
+    "/macos-guide": "/macos/",
+    "/linux-guide": "/linux/",
+    "/android-guide": "/android/",
+    "/ios-guide": "/ios/",
+    "/samsung-guide": "/samsung/",
   },
 
   vite: {
