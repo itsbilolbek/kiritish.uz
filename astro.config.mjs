@@ -7,7 +7,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://kiritish.uz",
-  trailingSlash: "always",
+  trailingSlash: "never",
 
   redirects: {
     "/windows-guide": "/windows",
