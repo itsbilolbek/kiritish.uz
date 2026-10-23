@@ -15,6 +15,37 @@ const cards = [
   { logo: androidLogo, text: "Android", link: "/android/" },
   { logo: iosLogo, text: "iPhone", link: "/ios/" },
 ];
+
+const faqs = [
+  {
+    q: "Redmi, LG, Xiaomi telefonlarida yangi harflarni qanday kiritaman?",
+    a: "Iltimos, Android uchun qoʻllanmaga murojaat qiling.",
+  },
+  {
+    q: "Telefon uchun yuklash uchun klaviatura fayli yoʻq-ku!",
+    a: "Oʻzbek tili uchun telefonda klaviatura hali ishlab chiqilmagan. Lekin Ş, Ç, Ö va Ğ harflarini kiritish imkoni bor. Buning uchun S, C, O va G tugmalarini bosib turib, ustidan chiqadigan kerakli harflarni tanlasangiz bas. Internet va Telegramda tarqalayotgan nomaʼlum APK fayllarini hech qachon ochmang. Firibgarlar APK fayllarini sizning telefoningizni buzib kirish uchun ishlatishadi. Ogoh boʻling.",
+  },
+  {
+    q: "Buning oʻrniga Turkcha yoki Ozarbayjoncha klaviatura ishlatsam boʻladi-ku!",
+    a: "Turkcha va Ozarbayjoncha klaviaturalarda rostdan ham Ş, Ç, Ö va Ğ harflari bor. Lekin ularda nuqtali va nuqtasiz Ii harflari ishlatiladi. Bu harflar oʻzbek tiliga mos kelmaydi va kompyuter ularni boshqa simvol deb qabul qiladi. Turkcha va ozarbayjoncha klaviaturalarda oddiy Ii harfi yoʻq. Shuning uchun bu klaviaturalar oʻzbekcha matn kiritish uchun toʻgʻri kelmaydi.",
+  },
+  {
+    q: "Bu programma xavfsizmi?",
+    a: "Veb-sayt va klaviatura fayllarining kodlari GitHub saytida ochiqlangan. Xohlagan kishi kodlarni oʻrganib tekshirishi mumkin. Agar haliyam ishonchingiz komil boʻlmasa oʻzingiz MSKLC (Windows) yoki Ukulele (MacOS) dasturi yordamida oʻzingiz uchun klaviatura yaratishingiz mumkin.",
+  },
+  {
+    q: "Yangi alifbo rasman qabul qilindimi?",
+    a: "Prezident Sh. Mirziyoyev 2026-yil 21-oktyabr kuni yangi alifbo haqidagi qonunni imzoladi. Qonun 60 kun oʻtgach kuchga kiradi.",
+  },
+  {
+    q: "Yangi harflar nimaga aynan ushbu joyda joylashgan?",
+    a: "Bu terilma tasodifiy emas. Rasmiy Windows, MacOS va Linux operatsion tizimlarida aynan shu shaklda terilma yuborilgan va tez orada joriy etiladi. Agar yangi alifbo uchun rasmiy terilmani oʻrganmoqchi boʻlsangiz, kiritish.uz veb-saytidagi klaviatura aynan siz uchun!",
+  },
+  {
+    q: "Nimaga veb-sayt eski alifboda yozilgan?",
+    a: "Google, Yandex va boshqa qidiruv tizimlarida yaxshiroq indeksatsiya qilinishi uchun va qidirish osonroq boʻlishi uchun.",
+  },
+];
 ---
 
 <Layout>
@@ -28,7 +59,7 @@ const cards = [
       tanlang:
     </p>
 
-    <div class="grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 md:grid-flow-row md:grid-cols-3 md:grid-rows-none">
+    <div class="grid grid-flow-col grid-cols-2 grid-rows-3 p-4 gap-4 md:grid-flow-row md:grid-cols-3 md:grid-rows-none">
       {cards.map((card, i) => (
         <a
           href={card.link}
@@ -44,20 +75,61 @@ const cards = [
       ))}
     </div>
 
-    <p>
-      Barcha dasturiy kodlar va manba fayllarini{" "}
-      <a
-        href="https://github.com/itsbilolbek/kiritish.uz"
-        class="link link-primary"
-      >
-        GitHub sahifamizda
-      </a>{" "}
-      tekshirishingiz mumkin.
-      <br />
-      Murojaat uchun Telegram botga yozing:{" "}
-      <a href="https://t.me/kiritishuzbot" class="link link-primary">
-        @kiritishuzbot
-      </a>
-    </p>
+    <!-- FAQ Section -->
+    <div class="w-full max-w-3xl mt-8 space-y-4">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold md:text-3xl">
+          Tez-tez soʻraladigan savollar
+        </h2>
+        <p class="text-sm text-base-content/70 mt-1">
+          Klaviaturadan foydalanish va oʻrnatish boʻyicha ommabop savollarga
+          javoblar
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {faqs.map((faq, index) => (
+          <details class="group bg-base-200 rounded-xl overflow-hidden transition-colors border border-base-300/50 [&[open]]:bg-base-200/80">
+            <summary class="flex items-center justify-between p-4 md:p-5 font-semibold text-lg cursor-pointer list-none select-none hover:text-primary transition-colors">
+              <span>{faq.q}</span>
+              <svg
+                class="w-5 h-5 shrink-0 ml-2 transition-transform duration-200 group-open:rotate-180 opacity-60"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </summary>
+            <div class="px-4 pb-5 md:px-5 pt-0 text-base-content/80 leading-relaxed text-sm md:text-base border-t border-base-300/30 pt-3">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <!-- Contact Footer inside FAQ -->
+      <div class="bg-base-200/50 rounded-xl p-6 text-center border border-base-300/40 mt-6">
+        <h3 class="font-semibold text-lg mb-1">
+          Veb-sayt muallifi bilan qanday bogʻlansam boʻladi?
+        </h3>
+        <p class="text-sm text-base-content/80">
+          Murojaat va savollar uchun Telegram botga yozing:{" "}
+          <a
+            href="https://t.me/kiritishuzbot"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link link-primary font-medium inline-flex items-center gap-1 hover:underline"
+          >
+            @kiritishuzbot
+          </a>
+        </p>
+      </div>
+    </div>
   </div>
 </Layout>
