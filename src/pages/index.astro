@@ -18,28 +18,78 @@ const cards = [
 
 const faqs = [
   {
-    q: "Redmi, LG, Xiaomi telefonlarida yangi harflarni qanday kiritaman?",
-    a: "Iltimos, Android uchun qoʻllanmaga murojaat qiling.",
+    q: "Redmi, Xiaomi, LG va boshqa telefonlarida yangi harflarni qanday kiritaman?",
+    a_html: `Iltimos, <a href="/android/" class="link link-primary">Android uchun qoʻllanmaga</a> murojaat qiling.`,
   },
   {
     q: "Telefon uchun yuklash uchun klaviatura fayli yoʻq-ku!",
-    a: "Oʻzbek tili uchun telefonda klaviatura hali ishlab chiqilmagan. Lekin Ş, Ç, Ö va Ğ harflarini kiritish imkoni bor. Buning uchun S, C, O va G tugmalarini bosib turib, ustidan chiqadigan kerakli harflarni tanlasangiz bas. Internet va Telegramda tarqalayotgan nomaʼlum APK fayllarini hech qachon ochmang. Firibgarlar APK fayllarini sizning telefoningizni buzib kirish uchun ishlatishadi. Ogoh boʻling.",
+    a_html: `
+          <p class="mb-3"><b>Ha, toʻgʻri.</b> Hozircha smartfonlar (Android va iOS) uchun alohida ilova yoki fayl koʻrinishidagi oʻzbekcha klaviatura ishlab chiqilmagan. Lekin yangi harflarni kiritishning juda oson yoʻli bor:</p>
+
+          <div class="bg-base-300/50 p-3.5 rounded-lg border-l-4 border-primary mb-3 text-sm md:text-base">
+            <b>Qanday yoziladi?</b> Telefoningizdagi standart klaviaturada <b>S, C, O, G</b> tugmalarini bir soniya bosib tursangiz, ustida mos ravishda <b>Ş, Ç, Ö, Ğ</b> harflari chiqadi. Ulardan keraklisini tanlasangiz bas.
+          </div>
+
+          <div class="bg-warning/10 text-warning-content p-3.5 rounded-lg border border-warning/30 text-sm">
+            <p class="font-semibold mb-1 flex items-center gap-1.5">
+              ⚠️ Muhim xavfsizlik ogohlantirishi:
+            </p>
+            <p>Telegram yoki turli saytlarda tarqalayotgan nomaʼlum <b>.APK</b> fayllarni telefoningizga oʻrnatmang! Firibgarlar bunday fayllar ichiga maxfiy maʼlumotlar va parollarni oʻgʻirlovchi zararli dasturlarni joylashtirgan boʻlishi mumkin. Ogoh boʻling.</p>
+          </div>
+        `,
   },
   {
-    q: "Buning oʻrniga Turkcha yoki Ozarbayjoncha klaviatura ishlatsam boʻladi-ku!",
-    a: "Turkcha va Ozarbayjoncha klaviaturalarda rostdan ham Ş, Ç, Ö va Ğ harflari bor. Lekin ularda nuqtali va nuqtasiz Ii harflari ishlatiladi. Bu harflar oʻzbek tiliga mos kelmaydi va kompyuter ularni boshqa simvol deb qabul qiladi. Turkcha va ozarbayjoncha klaviaturalarda oddiy Ii harfi yoʻq. Shuning uchun bu klaviaturalar oʻzbekcha matn kiritish uchun toʻgʻri kelmaydi.",
+    q: "Buning oʻrniga Turkcha yoki Ozarbayjoncha klaviatura ishlatsam boʻladi-ku! Bu nega yomon gʻoya?",
+    a_html: `
+          <p class="mb-3">Turkcha va Ozarbayjoncha klaviaturalarda rostdan ham <b>Ş, Ç, Ö, Ğ</b> harflari bor, lekin ulardan foydalanish juda katta muammolarni keltirib chiqaradi:</p>
+          <ul class="list-disc list-inside space-y-2 mb-3 pl-1">
+            <li><b>Nuqtali va nuqtasiz "I" muammosi:</b> Turk va ozarbayjon alifbosida ikkita har xil I harfi bor: nuqtali <code>İ / i</code> hamda nuqtasiz <code>I / ı</code>. Oʻzbek tilida esa oddiy <code>I / i</code> ishlatiladi. Turkcha klaviaturada yozsangiz, matningizda oʻzbek tiliga mos kelmaydigan <i>"İkki"</i> yoki <i>"kısh"</i> kabi soʻzlar paydo boʻladi.</li>
+            <li><b>Qidiruv tizimlari (SEO) xatoliklari:</b> Kompyuter uchun bu harflarning raqamli kodi (Unicode) mutlaqo boshqa. Turkcha klaviaturada yozilgan matnlarni Google, Telegram va qidiruv tizimlari oʻzbekcha soʻz deb topa olmaydi.</li>
+            <li><b>Hujjatlar va dasturlash:</b> Rasmiy davlat tizimlari (pasport, bank, soliq) turkcha <code>İ</code> va <code>ı</code> harflarini nomaʼlum belgi yoki xatolik deb qabul qiladi.</li>
+          </ul>
+          <p>Shuning uchun turkcha yoki ozarbayjoncha emas, aynan oʻzbek tili uchun moslashtirilgan klaviatura terilmasidan foydalanish zarur.</p>
+        `,
   },
   {
     q: "Bu programma xavfsizmi?",
-    a: "Veb-sayt va klaviatura fayllarining kodlari GitHub saytida ochiqlangan. Xohlagan kishi kodlarni oʻrganib tekshirishi mumkin. Agar haliyam ishonchingiz komil boʻlmasa oʻzingiz MSKLC (Windows) yoki Ukulele (MacOS) dasturi yordamida oʻzingiz uchun klaviatura yaratishingiz mumkin.",
+    a_html: `
+          <p class="mb-3">Ha, veb-saytdan klaviatura fayllarini yuklab olish <b>100% xavfsiz</b>. Buning bir nechta asosiy sabablari bor:</p>
+          <ul class="list-disc list-inside space-y-2 mb-3 pl-1">
+            <li><b>Ochiq kod (Open Source):</b> Veb-sayt va klaviatura fayllarining barcha kodlari <a href="https://github.com" target="_blank" class="link link-primary">GitHub</a> saytida ochiq joylangan. Xohlagan kishi kodlarni tekshirib chiqishi mumkin — u yerda hech qanday maxfiy maʼlumotlarni yigʻuvchi zararli kodlar yoʻq.</li>
+            <li><b>Rasmiy vositalardan foydalanilgan:</b> Klaviatura fayllari Windows uchun rasmiy <i>Microsoft Keyboard Layout Creator (MSKLC)</i> va macOS uchun <i>Ukelele</i> dasturlari yordamida yaratilgan. Ular tizimga hech qanday begona dastur oʻrnatmaydi, faqatgina tugmalarning joylashuv tartibini belgilaydi.</li>
+            <li><b>Har kim oʻzi tekshira oladi:</b> Agar shunda ham xavotiringiz boʻlsa, tayyor faylni yuklamasdan, ushbu rasmiy dasturlar (MSKLC/Ukelele) orqali oʻzingiz ham 5 daqiqada xuddi shunday klaviatura terilmasini yasab olishingiz mumkin.</li>
+          </ul>
+        `,
   },
   {
     q: "Yangi alifbo rasman qabul qilindimi?",
-    a: "Prezident Sh. Mirziyoyev 2026-yil 21-oktyabr kuni yangi alifbo haqidagi qonunni imzoladi. Qonun 60 kun oʻtgach kuchga kiradi.",
+    a_html: `
+          <p class="mb-3"><b>Ha, rasman qabul qilingan.</b> Oʻzbekiston Respublikasi Prezidenti Sh. Mirziyoyev 2026-yil 21-oktyabr kuni yangi alifbo haqidagi tuzatishlar kiritilgan qonunni imzoladi.</p>
+
+          <div class="bg-base-300/50 p-3.5 rounded-lg border-l-4 border-primary mb-3 text-sm md:text-base">
+            <b>Qachondan kuchga kiradi?</b> Qonun rasman eʼlon qilinganidan soʻng <b>60 kun oʻtgach</b> toʻliq kuchga kiradi.
+          </div>
+
+          <p class="text-sm text-base-content/80">
+            Hozirda davlat idoralari, taʼlim muassasalari va raqamli platformalar bosqichma-bosqich ushbu yangi alifboga oʻtish ishlarini olib bormoqda. Kompyuter va telefonlarda ushbu klaviatura terilmalarini hozirdanoq oʻrnatib olish yangi harflarga koʻnikish va qulay yozish imkonini beradi.
+          </p>
+        `,
   },
   {
     q: "Yangi harflar nimaga aynan ushbu joyda joylashgan?",
-    a: "Bu terilma tasodifiy emas. Rasmiy Windows, MacOS va Linux operatsion tizimlarida aynan shu shaklda terilma yuborilgan va tez orada joriy etiladi. Agar yangi alifbo uchun rasmiy terilmani oʻrganmoqchi boʻlsangiz, kiritish.uz veb-saytidagi klaviatura aynan siz uchun!",
+    a_html: `
+          <p class="mb-3">Bu klaviatura terilmasi (layout) tasodifiy tuzilmagan — u <b>ergonomika</b>, <b>amaliy qulaylik</b> va <b>xalqaro standartlar</b> asosida ishlab chiqilgan:</p>
+
+          <ul class="list-disc list-inside space-y-2 mb-3 pl-1">
+            <li><b>Rasmiy taklifga asoslangan:</b> Ushbu terilma Microsoft, Google, Apple va Linux kabi yirik texnologik kompaniyalarga operatsion tizimlariga rasmiy kiritish uchun yuborilgan standart taklif asosida yaratilgan.</li>
+            <li><b>Kelajak uchun qulaylik:</b> Hozirdanoq ushbu klaviaturadan foydalanishni boshlasangiz, kelajakda operatsion tizimlarga rasmiy yangilanish (update) kelganida qayta koʻnikish shart boʻlmaydi va terishga tayyor boʻlasiz.</li>
+            <li><b>Ergonomik joylashuv:</b> Oʻzbek tilida tez-tez ishlatiladigan <b>Ş</b> va <b>Ö</b> harflari barmoqlar yetib borishi eng qulay boʻlgan markaziy oʻrinlarga joylashtirilgan. Kamroq uchraydigan <b>Ğ</b> harfi esa chetroqqa surilgan. Bu matnni tezroq va barmoqlarni toalmasdan terish imkonini beradi.</li>
+          </ul>
+
+          <p class="text-sm text-base-content/80">
+            Qisqasi, <i>kiritish.uz</i> saytidagi klaviatura rasmiy standartlar kelajagiga va oʻzbek tili ergonomikasiga toʻliq mos keladi!
+          </p>
+        `,
   },
   {
     q: "Nimaga veb-sayt eski alifboda yozilgan?",
@@ -88,7 +138,7 @@ const faqs = [
       </div>
 
       <div class="space-y-3">
-        {faqs.map((faq, index) => (
+        {faqs.map((faq) => (
           <details class="group bg-base-200 rounded-xl overflow-hidden transition-colors border border-base-300/50 [&[open]]:bg-base-200/80">
             <summary class="flex items-center justify-between p-4 md:p-5 font-semibold text-lg cursor-pointer list-none select-none hover:text-primary transition-colors">
               <span>{faq.q}</span>
@@ -106,8 +156,8 @@ const faqs = [
                 />
               </svg>
             </summary>
-            <div class="px-4 pb-5 md:px-5 pt-0 text-base-content/80 leading-relaxed text-sm md:text-base border-t border-base-300/30 pt-3">
-              {faq.a}
+            <div class="px-4 pb-5 md:px-5 text-base-content/80 leading-relaxed text-sm md:text-base border-t border-base-300/30 pt-4">
+              {faq.a_html ? <Fragment set:html={faq.a_html} /> : <p>{faq.a}</p>}
             </div>
           </details>
         ))}
