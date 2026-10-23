@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Download } from "@lucide/astro";
+import { Download, CheckCircle2, Terminal } from "@lucide/astro";
 import { Image } from "astro:assets";
 import windowsLayout from "../assets/windows-keyboard-layout.png";
 ---
@@ -9,145 +9,315 @@ import windowsLayout from "../assets/windows-keyboard-layout.png";
   title="Linux uchun yangi oʻzbek alifbo klaviaturasini yuklab olish | Ş, Ç, Ö va Ğ harflarini kiritish"
   description="Linux operatsion tizimida yangi alifbodagi Ş, Ç, Ö va Ğ harflarini kiritish uchun klaviaturani yuklab oling."
 >
-  <div class="mx-auto flex max-w-7xl flex-col gap-2 p-4">
-    <h1 class="mt-4 text-3xl">Linux uchun klaviatura</h1>
-    <Image
-      src={windowsLayout}
-      alt="Windows klaviatura terilmasi"
-      class="my-4 self-center"
-    />
-    <h2 class="text-2xl">Klaviatura xususiyatlari</h2>
+  <div class="mx-auto flex max-w-5xl flex-col items-center px-4 py-10 md:py-16 gap-10">
+    <!-- Hero Header & Preview -->
+    <div class="text-center max-w-3xl space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide">
+        <span>🐧 Linux (X11 / XKB)</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+        Linux uchun klaviatura
+      </h1>
+      <p class="text-base md:text-lg text-base-content/80 leading-relaxed">
+        Linux operatsion tizimida{" "}
+        <strong class="text-base-content font-semibold">Ş, Ç, Ö, Ğ</strong>{" "}
+        harflarini qulay va tez kiritish uchun XKB terilma fayli.
+      </p>
+    </div>
 
-    <ul class="list-inside list-disc space-y-1.5">
-      <li>
-        <b>QWERTY</b> terilmasi asosida yasalgan va oʻrganish tez va oson.
-      </li>
-      <li>
-        Klaviaturada <b>Şş</b>, <b>Çç</b>, <b>Öö</b> va <b>Ğğ</b> belgilarini
-        kiritish qulay va <kbd class="kbd">AltGr</kbd> bosish talab etilmaydi.
-      </li>
-      <li>
-        <span>
-          Ushbu klaviatura terilmasi koʻproq belgilarni kiritish uchun{" "}
-          <kbd class="kbd">AltGr</kbd> (odatda oʻng <kbd class="kbd">Alt</kbd>{" "}
-          tugmasi) tugmasidan foydalandi:
-        </span>
-      </li>
-    </ul>
+    <!-- Keyboard Layout Image & Primary Download Button -->
+    <div class="w-full bg-base-200/50 border border-base-300/60 rounded-3xl p-6 md:p-8 flex flex-col items-center shadow-xs gap-6">
+      <Image
+        src={windowsLayout}
+        alt="Klaviatura terilmasi"
+        class="rounded-xl shadow-md max-w-full h-auto"
+      />
 
-    <h3 class="mt-2 text-xl">Tugmalar birikmasi</h3>
-    <ul class="list-inside list-disc space-y-1.5">
-      <li>
-        <b>ş harfini</b> kiritish uchun <kbd class="kbd">;</kbd> tugmasini
-        bosing.
-      </li>
-      <li>
-        <b>ç harfini</b> kiritish uchun <kbd class="kbd">'</kbd> tugmasini
-        bosing.
-      </li>
-      <li>
-        <b>ö harfini</b> kiritish uchun <kbd class="kbd">[</kbd> tugmasini
-        bosing.
-      </li>
-      <li>
-        <b>ğ harfini</b> kiritish uchun <kbd class="kbd">]</kbd> tugmasini
-        bosing.
-      </li>
-      <li>
-        <b>Tutuq belgisini</b> kiritish uchun <kbd class="kbd">\</kbd> tugmasini
-        bosing.
-      </li>
-      <li>
-        Eski alifbodagi Oʻ va Gʻ harflarida ishlatiladigan teskari vergulni (
-        <a
-          class="link-primary"
-          href="https://uz.wikipedia.org/wiki/%CA%BB_(belgi)"
-        >
-          ʻOkina belgisini
-        </a>
-        ) kiritish uchun <kbd class="kbd">Shift</kbd>+<kbd class="kbd">\</kbd>{" "}
-        kombinatsiyasini bosing.
-      </li>
-      <li>
-        Nuqta vergulni <b>(;)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
-        <kbd class="kbd">;</kbd> kombinatsiyasini bosing.
-      </li>
-      <li>
-        Ikki nuqtani <b>(:)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
-        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">;</kbd> kombinatsiyasini
-        bosing.
-      </li>
-      <li>
-        Apostrofni <b>(')</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
-        <kbd class="kbd">'</kbd> kombinatsiyasini bosing.
-      </li>
-      <li>
-        Qoʻshtirnoqni <b>(")</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
-        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">'</kbd> kombinatsiyasini
-        bosing.
-      </li>
-      <li>
-        Chap kvadrat qavsni <b>([)</b> kiritish uchun{" "}
-        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">[</kbd> kombinatsiyasini
-        bosing.
-      </li>
-      <li>
-        Chap figurali qavsni <b>({"{"})</b> kiritish uchun{" "}
-        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">Shift</kbd> +{" "}
-        <kbd class="kbd">[</kbd> kombinatsiyasini bosing.
-      </li>
-      <li>
-        Oʻng kvadrat qavsni <b>(])</b> kiritish uchun{" "}
-        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">]</kbd> kombinatsiyasini
-        bosing.
-      </li>
-      <li>
-        Oʻng figurali qavsni <b>({"}"})</b> kiritish uchun{" "}
-        <kbd class="kbd">AltGr</kbd> + <kbd class="kbd">Shift</kbd> +{" "}
-        <kbd class="kbd">]</kbd> kombinatsiyasini bosing.
-      </li>
-      <li>
-        Teskari sleshni <b>(\)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
-        <kbd class="kbd">\</kbd> kombinatsiyasini bosing.
-      </li>
-      <li>
-        Tik chiziqni <b>(|)</b> kiritish uchun <kbd class="kbd">AltGr</kbd> +{" "}
-        <kbd class="kbd">Shift</kbd> + <kbd class="kbd">\</kbd> kombinatsiyasini
-        bosing.
-      </li>
-    </ul>
-    <h2 class="mt-4 text-2xl">Oʻrnatish usuli</h2>
-    <ol class="list-inside list-decimal space-y-1.5">
-      <li>
-        <a href="/uz" class="link-primary font-mono" download="uz">
-          uz
-        </a>{" "}
-        faylini yuklab oling.
-      </li>
-      <li>
-        <span class="font-mono">/usr/share/X11/xkb/symbols/uz</span> faylini siz
-        yuklab olgan fayl bilan almashtiring. Eski{" "}
-        <span class="font-mono">uz</span> faylini zaxiralash tavsiya etiladi.{" "}
-        <br />
-        <div class="mockup-code my-2 w-full">
-          <pre data-prefix="$"><code>sudo mv ~/Downloads/uz /usr/share/X11/xkb/symbols/uz</code></pre>
+      <a
+        class="btn btn-lg btn-primary btn-wide rounded-2xl gap-2 shadow-md hover:shadow-lg transition-all"
+        href="/uz"
+        download="uz"
+      >
+        <Download class="h-6 w-6" />
+        <span>Yuklab olish</span>
+      </a>
+    </div>
+
+    <!-- Features Overview Section -->
+    <div class="w-full space-y-4">
+      <h2 class="text-2xl font-bold text-center md:text-left">
+        Klaviatura xususiyatlari
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-base-200/50 border border-base-300/60 p-5 rounded-2xl space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <CheckCircle2 class="w-5 h-5" />
+          </div>
+          <h3 class="font-semibold text-lg">Rasmiy standart</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">
+            Yirik texnologik kompaniyalarga rasmiy taklif sifatida yuborilgan.
+            Hozirdanoq oʻrganib olsangiz, tez orada operatsion tizimlarga rasmiy
+            yangilanish kelganda koʻnikish shart boʻlmaydi.
+          </p>
         </div>
-      </li>
-      <li>
-        Sozlamalarda klaviatura boʻlimiga oʻtib <b>Uzbek</b> variantini
-        qoʻshing.
-      </li>
-      <li>
-        <b>Uzbek (Latin)</b> terilmasini tanlang.
-      </li>
-    </ol>
-    <a
-      class="btn btn-lg btn-primary btn-wide my-4 gap-2 self-center"
-      href="/uz"
-      download="uz"
-    >
-      <Download class="h-6 w-6" />
-      Yuklab olish
-    </a>
+
+        <div class="bg-base-200/50 border border-base-300/60 p-5 rounded-2xl space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <kbd class="kbd kbd-sm">Q</kbd>
+          </div>
+          <h3 class="font-semibold text-lg">Standard QWERTY</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">
+            Standart QWERTY terilmasiga asoslangan boʻlib, oʻrganish juda oson
+            va tez kechadi.
+          </p>
+        </div>
+
+        <div class="bg-base-200/50 border border-base-300/60 p-5 rounded-2xl space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <kbd class="kbd kbd-sm">Alt</kbd>
+          </div>
+          <h3 class="font-semibold text-lg">Oson kiritish</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">
+            Harflarni yozishda <kbd class="kbd kbd-xs">AltGr</kbd> bosish talab
+            etilmaydi. Qoʻshimcha belgilar uchun{" "}
+            <kbd class="kbd kbd-xs">AltGr</kbd> ishlatiladi.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Shortcuts & Combinations Section -->
+    <div class="w-full space-y-6">
+      <h2 class="text-2xl font-bold text-center md:text-left">
+        Tugmalar birikmasi
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Direct Characters Table -->
+        <div class="bg-base-200/40 border border-base-300/60 rounded-2xl p-5 space-y-3">
+          <h3 class="font-semibold text-lg text-primary flex items-center gap-2">
+            <span>🔤 Yangi harflar</span>
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Harf</th>
+                  <th>Bosiladigan tugma</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr>
+                  <td>
+                    <b>ş harfi</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">;</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ç harfi</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">'</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ö harfi</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">[</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ğ harfi</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">]</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Tutuq belgisi (ʼ)</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">\</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ʻOkina belgisi (ʻ)</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">\</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- AltGr Special Symbols Table -->
+        <div class="bg-base-200/40 border border-base-300/60 rounded-2xl p-5 space-y-3">
+          <h3 class="font-semibold text-lg text-primary flex items-center gap-2">
+            <span>⌨️ Qoʻshimcha belgilar (AltGr bilan)</span>
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Belgi</th>
+                  <th>Kombinatsiya</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr>
+                  <td>
+                    Nuqta vergul <b>;</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">;</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Ikki nuqta <b>:</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">;</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Apostrof <b>'</b> / Qoʻshtirnoq <b>"</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">'</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Qavslar <b>[ ]</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">[</kbd> yoki{" "}
+                    <kbd class="kbd kbd-sm">]</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Figurali qavslar <b>&#123; &#125;</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">[</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">]</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Slesh <b>\</b> / Tik chiziq <b>|</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">\</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Installation Steps Section -->
+    <div class="w-full bg-base-200/40 border border-base-300/60 rounded-3xl p-6 md:p-8 space-y-6 shadow-xs">
+      <h2 class="text-2xl font-bold text-center md:text-left">
+        Oʻrnatish usuli
+      </h2>
+
+      <ol class="space-y-6">
+        <li class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-content font-bold shrink-0">
+            1
+          </span>
+          <div class="space-y-1">
+            <h3 class="font-semibold text-base md:text-lg">
+              Faylni yuklab oling
+            </h3>
+            <p class="text-sm text-base-content/80">
+              <a
+                href="/uz"
+                download="uz"
+                class="link link-primary font-mono font-semibold"
+              >
+                uz
+              </a>{" "}
+              nomli klaviatura terilmasi faylini yuklab oling.
+            </p>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-content font-bold shrink-0">
+            2
+          </span>
+          <div class="space-y-3 w-full">
+            <h3 class="font-semibold text-base md:text-lg">
+              Tizim papkasiga joylashtiring
+            </h3>
+            <p class="text-sm text-base-content/80">
+              Faylni{" "}
+              <span class="font-mono bg-base-300/60 px-2 py-0.5 rounded text-xs">
+                /usr/share/X11/xkb/symbols/uz
+              </span>{" "}
+              manziliga koʻchiring (eski faylni zaxiralash tavsiya etiladi):
+            </p>
+            <div class="mockup-code w-full text-xs md:text-sm">
+              <pre data-prefix="$"><code>sudo mv ~/Downloads/uz /usr/share/X11/xkb/symbols/uz</code></pre>
+            </div>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-content font-bold shrink-0">
+            3
+          </span>
+          <div class="space-y-1">
+            <h3 class="font-semibold text-base md:text-lg">
+              Sozlamalardan faollashtiring
+            </h3>
+            <p class="text-sm text-base-content/80">
+              Desktop muhitingiz klaviatura sozlamalaridan <b>Uzbek</b> tilini
+              qoʻshing va <b>Uzbek (Latin)</b> terilmasini tanlang.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Bottom Secondary Download Callout -->
+    <div class="text-center pt-4">
+      <a
+        class="btn btn-lg btn-primary btn-wide rounded-2xl gap-2 shadow-md hover:shadow-lg transition-all"
+        href="/uz"
+        download="uz"
+      >
+        <Download class="h-6 w-6" />
+        <span>Yuklab olish</span>
+      </a>
+    </div>
   </div>
 </Layout>

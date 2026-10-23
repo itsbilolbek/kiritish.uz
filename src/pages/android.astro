@@ -9,142 +9,179 @@ import gboardSettings1 from "../assets/gboard-1.png";
 import gboardSettings2 from "../assets/gboard-2.png";
 import gboardSettings3 from "../assets/gboard-3.png";
 import gboardSettings4 from "../assets/gboard-4.png";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-
-const images = [
-  { src: gboardS, alt: "Gboard klaviaturasi: Ş harfi" },
-  { src: gboardO, alt: "Gboard klaviaturasi: Ö harfi" },
-  { src: gboardC, alt: "Gboard klaviaturasi: Ç harfi" },
-  { src: gboardG, alt: "Gboard klaviaturasi: Ğ harfi" },
-];
-
-const gboardSettings = [
-  { src: gboardSettings1, alt: "Gboard klaviaturasi: bosh menyu" },
-  { src: gboardSettings2, alt: "Gboard klaviaturasi: tillar menyusi" },
-  {
-    src: gboardSettings3,
-    alt: "Gboard klaviaturasi: klaviatura qoʻshish menyusi",
-  },
-  { src: gboardSettings4, alt: "Gboard klaviaturasi: Oʻzbek (lotin) menyusi" },
-];
 ---
 
 <Layout
   title="Gboard klaviaturasi | Yangi alifbodagi Ş, Ç, Ö va Ğ harflarini kiritish"
   description="Android operatsion tizimida yangi alifbodagi Ş, Ç, Ö va Ğ harflarini Gboard klaviaturasi yordamida kiriting."
 >
-  <div class="mx-auto flex max-w-7xl flex-col gap-4 p-4">
-    <h1 class="text-3xl">Gboard klaviaturasi</h1>
-    <p>
-      Android qurilmalarida Ş, Ö, Ç va Ğ harflarini kiritishning eng oson
-      vositasi — bu <b>Gboard</b> klaviaturasidir. Odatda Gboard klaviaturasi
-      Android qurilmalarida oʻrnatilgan boʻladi. Gboard klaviaturasini{" "}
-      <a
-        href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin"
-        class="link-primary"
-      >
-        Play Market
-      </a>
-      ʼdan oʻrnatishingiz mumkin. Ş, Ö, Ç va Ğ harflarini kiritish uchun Gboard
-      sozlamalarida Oʼzbek tilini oʻrnatishingiz lozim:
-    </p>
-    <div class="swiper mySwiper2 rounded-box w-full max-w-xl md:my-8">
-      <div class="swiper-wrapper">
-        {gboardSettings.map((img, i) => (
-          <div class="swiper-slide">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              class="rounded-box h-128 w-full object-contain"
-            />
-          </div>
-        ))}
+  <div class="mx-auto flex max-w-5xl flex-col items-center px-4 py-10 md:py-16 gap-10">
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide">
+        <span>🤖 Android / Gboard Keyboard</span>
       </div>
-      <div class="swiper-pagination"></div>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+        Gboard klaviaturasi
+      </h1>
+      <p class="text-base md:text-lg text-base-content/80 leading-relaxed">
+        Android qurilmalarida{" "}
+        <strong class="text-base-content font-semibold">Ş, Ö, Ç va Ğ</strong>{" "}
+        harflarini kiritish uchun{" "}
+        <a
+          href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin"
+          target="_blank"
+          class="link link-primary font-medium"
+        >
+          Gboard
+        </a>{" "}
+        klaviaturasida Oʻzbek tilini sozlashingiz kifoya.
+      </p>
     </div>
-    <ol class="list-inside list-decimal space-y-1.5">
-      <li>
-        Gboard sozlamalarini oching va <b>Tillar</b> boʻlimiga oʻting.
-      </li>
-      <li>
-        <b>Klaviatura qoʻshish</b> tugmasini bosing va <b>Oʻzbek (lotin)</b>{" "}
-        opsiyasini tanlang.
-      </li>
-      <li>
-        <b>Tayyor</b> tugmasini bosing.
-      </li>
-    </ol>
 
-    <h2 class="mt-4 text-2xl">Harflarni kiritish</h2>
-    <div class="swiper mySwiper rounded-box w-full max-w-xl md:my-8">
-      <div class="swiper-wrapper">
-        {images.map((img, i) => (
-          <div class="swiper-slide">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              class="rounded-box h-64 w-full object-contain md:h-96"
-            />
+    <!-- Installation Steps Section -->
+    <div class="w-full bg-base-200/40 border border-base-300/60 rounded-3xl p-6 md:p-8 space-y-6 shadow-xs">
+      <h2 class="text-2xl font-bold text-center md:text-left">
+        Oʻrnatish va sozlash usuli
+      </h2>
+
+      <ol class="space-y-8">
+        <li class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-content font-bold shrink-0">
+            1
+          </span>
+          <div class="space-y-3 w-full">
+            <h3 class="font-semibold text-base md:text-lg">
+              Gboard sozlamalarini oching
+            </h3>
+            <p class="text-sm text-base-content/80">
+              Gboard sozlamalariga kiring va <b>Tillar (Languages)</b> boʻlimiga
+              oʻting.
+            </p>
+            <div class="flex justify-center pt-2">
+              <Image
+                src={gboardSettings1}
+                alt="Gboard klaviaturasi: bosh menyu"
+                class="rounded-xl border border-base-300 shadow-sm max-w-xs w-full"
+              />
+            </div>
           </div>
-        ))}
-      </div>
-      <div class="swiper-pagination"></div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-content font-bold shrink-0">
+            2
+          </span>
+          <div class="space-y-3 w-full">
+            <h3 class="font-semibold text-base md:text-lg">
+              Klaviatura qoʻshish
+            </h3>
+            <p class="text-sm text-base-content/80">
+              <b>Klaviatura qoʻshish (Add keyboard)</b> tugmasini bosing va
+              roʻyxatdan <b>Oʻzbek (lotin)</b> opsiyasini tanlang.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="flex justify-center">
+                <Image
+                  src={gboardSettings2}
+                  alt="Gboard klaviaturasi: tillar menyusi"
+                  class="rounded-xl border border-base-300 shadow-sm max-w-xs w-full"
+                />
+              </div>
+              <div class="flex justify-center">
+                <Image
+                  src={gboardSettings3}
+                  alt="Gboard klaviaturasi: klaviatura qoʻshish menyusi"
+                  class="rounded-xl border border-base-300 shadow-sm max-w-xs w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-content font-bold shrink-0">
+            3
+          </span>
+          <div class="space-y-3 w-full">
+            <h3 class="font-semibold text-base md:text-lg">
+              Sozlamani yakunlang
+            </h3>
+            <p class="text-sm text-base-content/80">
+              <b>Tayyor (Done)</b> tugmasini bosing. Shundan soʻng yangi alifbo
+              harflari klaviaturangizda faollashadi.
+            </p>
+            <div class="flex justify-center pt-2">
+              <Image
+                src={gboardSettings4}
+                alt="Gboard klaviaturasi: Oʻzbek (lotin) menyusi"
+                class="rounded-xl border border-base-300 shadow-sm max-w-xs w-full"
+              />
+            </div>
+          </div>
+        </li>
+      </ol>
     </div>
-    <ul class="list-inside list-disc space-y-1.5">
-      <li>
-        <b>Ş harfini</b> kiritish uchun <kbd class="kbd">S</kbd> tugmasini bosib
-        turing va Ş harfini tanlang.
-      </li>
-      <li>
-        <b>Ö harfini</b> kiritish uchun <kbd class="kbd">O</kbd> tugmasini bosib
-        turing va Ö harfini tanlang.
-      </li>
-      <li>
-        <b>Ç harfini</b> kiritish uchun <kbd class="kbd">C</kbd> tugmasini bosib
-        turing va Ç harfini tanlang.
-      </li>
-      <li>
-        <b>Ğ harfini</b> kiritish uchun <kbd class="kbd">G</kbd> tugmasini bosib
-        turing va Ğ harfini tanlang.
-      </li>
-    </ul>
+
+    <!-- How to Type Section (Cards Grid) -->
+    <div class="w-full max-w-3xl space-y-6">
+      <h2 class="text-2xl font-bold text-center">
+        Harflarni qanday kiritish mumkin?
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-base-200/50 p-5 rounded-2xl border border-base-300/60 flex items-start gap-4 shadow-xs">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary font-bold text-lg shrink-0">
+            Ş
+          </span>
+          <div>
+            <h3 class="font-semibold text-base">Ş harfi</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              <kbd class="kbd kbd-sm">S</kbd> tugmasini bosib turing va chiqqan
+              oynadan Ş harfini tanlang.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-base-200/50 p-5 rounded-2xl border border-base-300/60 flex items-start gap-4 shadow-xs">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary font-bold text-lg shrink-0">
+            Ö
+          </span>
+          <div>
+            <h3 class="font-semibold text-base">Ö harfi</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              <kbd class="kbd kbd-sm">O</kbd> tugmasini bosib turing va chiqqan
+              oynadan Ö harfini tanlang.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-base-200/50 p-5 rounded-2xl border border-base-300/60 flex items-start gap-4 shadow-xs">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary font-bold text-lg shrink-0">
+            Ç
+          </span>
+          <div>
+            <h3 class="font-semibold text-base">Ç harfi</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              <kbd class="kbd kbd-sm">C</kbd> tugmasini bosib turing va chiqqan
+              oynadan Ç harfini tanlang.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-base-200/50 p-5 rounded-2xl border border-base-300/60 flex items-start gap-4 shadow-xs">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary font-bold text-lg shrink-0">
+            Ğ
+          </span>
+          <div>
+            <h3 class="font-semibold text-base">Ğ harfi</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              <kbd class="kbd kbd-sm">G</kbd> tugmasini bosib turing va chiqqan
+              oynadan Ğ harfini tanlang.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </Layout>
-
-<script>
-  import Swiper from "swiper";
-  import { Autoplay, Pagination } from "swiper/modules";
-
-  document.addEventListener("DOMContentLoaded", () => {
-    new Swiper(".mySwiper", {
-      modules: [Autoplay, Pagination],
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    new Swiper(".mySwiper2", {
-      modules: [Autoplay, Pagination],
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  });
-</script>
