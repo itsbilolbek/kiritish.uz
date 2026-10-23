@@ -16,6 +16,7 @@ export default defineConfig({
     "/android-guide": "/android/",
     "/ios-guide": "/ios/",
     "/samsung-guide": "/samsung/",
+    "/ios": "/iphone/",
   },
 
   vite: {
