@@ -17,6 +17,7 @@ export default defineConfig({
     "/ios-guide": "/ios/",
     "/samsung-guide": "/samsung/",
     "/ios": "/iphone/",
+    "/donat/": "/donate/",
   },
 
   vite: {

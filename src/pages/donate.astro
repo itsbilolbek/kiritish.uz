@@ -1,0 +1,235 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  Copy,
+  Heart,
+  ShieldCheck,
+  Sparkles,
+  Server,
+  ExternalLink,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+
+// Click QR-kod rasmingiz yoʻlini koʻrsating
+import clickQr from "../assets/click-qr.jpg";
+
+// Click Hamyon raqami (raqamlar va formatlangan koʻrinishi)
+const clickWalletRaw = "8802410266127636"; // Click hamyon raqamingizni kiriting
+const clickWalletFormatted = "8802 4102 6612 7636";
+
+// Click orqali toʻgʻridan-toʻgʻri toʻlov havolasi (click.uz / my.click.uz)
+const clickPayUrl = `https://my.click.uz/clickp2p/68DDA71BC256E4661DFF2D2591EB7C3FB9FEF097E25E119A710A8DDD86236E80`;
+---
+
+<Layout
+  title="Loyiha uchun xayriya | kiritish.uz"
+  description="kiritish.uz loyihasini qoʻllab-quvvatlash va rivojlantirish uchun xayriya qilish sahifasi."
+>
+  <div class="mx-auto flex max-w-4xl flex-col items-center px-4 py-10 md:py-16 gap-10">
+    <!-- Hero Header -->
+    <div class="text-center max-w-2xl space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide">
+        <Heart class="w-4 h-4 text-primary fill-primary/20" />
+        <span>Loyihani qoʻllab-quvvatlash</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+        Loyihani birgalikda rivojlantiramiz!
+      </h1>
+      <p class="text-base md:text-lg text-base-content/80 leading-relaxed">
+        <strong class="text-base-content font-semibold">kiritish.uz</strong> —
+        yangi oʻzbek alifbosini raqamli dunyoda keng joriy etishga qaratilgan
+        mutlaqo bepul va ochiq manbali (open-source) loyiha.
+      </p>
+    </div>
+
+    <!-- Payment Methods Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      <!-- Click QR Code Card -->
+      <div class="bg-base-200/50 border border-base-300/60 rounded-3xl p-6 flex flex-col items-center text-center space-y-4 shadow-xs">
+        <div class="badge badge-primary font-medium">Click ilovasi orqali</div>
+        <h2 class="font-bold text-xl">QR-kod orqali toʻlov</h2>
+        <p class="text-xs md:text-sm text-base-content/70">
+          Click ilovasini oching, skanerlash boʻlimiga oʻting va ushbu QR-kodni
+          skanerlang:
+        </p>
+
+        <div class="bg-white p-3 rounded-2xl shadow-sm border border-base-300">
+          <Image
+            src={clickQr}
+            alt="Click Payment QR Code"
+            class="w-48 h-48 object-contain rounded-xl zoomable-img cursor-zoom-in"
+          />
+        </div>
+        <span class="text-xs opacity-60">
+          Kattalashtirish uchun QR-kod ustiga bosing
+        </span>
+      </div>
+
+      <!-- Click Wallet Copy & Direct Button Card -->
+      <div class="bg-base-200/50 border border-base-300/60 rounded-3xl p-6 flex flex-col items-center justify-between text-center space-y-6 shadow-xs">
+        <div class="space-y-4 w-full">
+          <div class="badge badge-secondary font-medium">Click Hamyon</div>
+          <h2 class="font-bold text-xl">Click Hamyon raqami</h2>
+          <p class="text-xs md:text-sm text-base-content/70">
+            Hamyon raqamini nusxalab toʻlov qilishingiz yoki birgina tugma
+            orqali Click ilovasiga oʻtishingiz mumkin:
+          </p>
+
+          <!-- Copyable Wallet Number Box -->
+          <div class="bg-base-100 p-4 rounded-2xl border border-base-300/80 space-y-2 w-full">
+            <span class="text-xs font-semibold text-base-content/60 uppercase tracking-wider block">
+              Click Hamyon raqami
+            </span>
+            <div class="flex items-center justify-between bg-base-200/60 rounded-xl p-2.5 pl-4 border border-base-300/40">
+              <span
+                id="wallet-number-display"
+                class="font-mono font-bold text-base md:text-lg tracking-wider select-all text-base-content"
+              >
+                {clickWalletFormatted}
+              </span>
+              <button
+                id="copy-wallet-btn"
+                type="button"
+                class="btn btn-primary btn-sm rounded-lg gap-1.5 font-medium shrink-0"
+                data-wallet={clickWalletRaw}
+              >
+                <Copy class="w-4 h-4" />
+                <span id="copy-btn-text">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Direct Click App Link Button -->
+          <a
+            href={clickPayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary w-full rounded-xl gap-2 font-semibold shadow-xs"
+          >
+            <span>Click ilovasida oʻtkazish</span>
+            <ExternalLink class="w-4 h-4" />
+          </a>
+        </div>
+
+        <div class="text-xs text-base-content/60 bg-base-100/50 p-3 rounded-xl border border-base-300/30 w-full">
+          🔒 Barcha toʻlovlar xavfsiz va toʻgʻridan-toʻgʻri Click Hamyonga qabul
+          qilinadi.
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Donate & Usage Breakdown Section -->
+    <div class="w-full bg-base-200/40 border border-base-300/60 rounded-3xl p-6 md:p-8 space-y-8 shadow-xs">
+      <div class="text-center md:text-left space-y-2">
+        <h2 class="text-2xl font-bold">Mablagʻlar nimaga sarflanadi?</h2>
+        <p class="text-sm md:text-base text-base-content/80">
+          Sizning kichik boʻlsada eʼtiboringiz loyihaning doimiy ravishda bepul
+          va sifatli faoliyat yuritishiga yordam beradi:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-base-100 p-5 rounded-2xl border border-base-300/60 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <Server class="w-5 h-5" />
+          </div>
+          <h3 class="font-semibold text-base md:text-lg">Domen va Serverlar</h3>
+          <p class="text-xs md:text-sm text-base-content/70 leading-relaxed">
+            <code class="font-mono text-xs bg-base-200 px-1.5 py-0.5 rounded">
+              kiritish.uz
+            </code>{" "}
+            domen toʻlovlarini va veb-sayt uzluksiz ishlashi uchun hosting
+            xarajatlarini qoplashga.
+          </p>
+        </div>
+
+        <div class="bg-base-100 p-5 rounded-2xl border border-base-300/60 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <Sparkles class="w-5 h-5" />
+          </div>
+          <h3 class="font-semibold text-lg">Platformalarni kengaytirish</h3>
+          <p class="text-xs md:text-sm text-base-content/70 leading-relaxed">
+            Yangi operatsion tizimlar, maxsus dasturlar va telefon platformalari
+            uchun yangi klaviatura fayllarini yaratishga.
+          </p>
+        </div>
+
+        <div class="bg-base-100 p-5 rounded-2xl border border-base-300/60 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <ShieldCheck class="w-5 h-5" />
+          </div>
+          <h3 class="font-semibold text-lg">Ochiq manba va targʻibot</h3>
+          <p class="text-xs md:text-sm text-base-content/70 leading-relaxed">
+            Loyiha kodlarini doimiy yangilab borish hamda keng jamoatchilikka
+            yangi alifboni targʻib qilishga.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center pt-2 text-sm text-base-content/70 border-t border-base-300/40">
+        Loyihamizni qoʻllab-quvvatlaganingiz va oʻzbek tili rivojiga hissa
+        qoʻshayotganingiz uchun rahmat! ❤️
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function setupCopyButton() {
+    const copyBtn = document.getElementById("copy-wallet-btn");
+    const copyText = document.getElementById("copy-btn-text");
+
+    if (!copyBtn || !copyText) return;
+
+    copyBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const walletNumber = copyBtn.getAttribute("data-wallet");
+      if (!walletNumber) return;
+
+      let success = false;
+
+      // Primary clipboard API
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(walletNumber);
+          success = true;
+        } catch (err) {
+          console.error("Clipboard API error:", err);
+        }
+      }
+
+      // Fallback selection method for older browsers or non-HTTPS
+      if (!success) {
+        const textarea = document.createElement("textarea");
+        textarea.value = walletNumber;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        try {
+          success = document.execCommand("copy");
+        } catch (err) {
+          console.error("Fallback copy error:", err);
+        }
+        document.body.removeChild(textarea);
+      }
+
+      if (success) {
+        copyText.textContent = "Copied!";
+        copyBtn.classList.remove("btn-primary");
+        copyBtn.classList.add("btn-success");
+
+        setTimeout(() => {
+          copyText.textContent = "Copy";
+          copyBtn.classList.remove("btn-success");
+          copyBtn.classList.add("btn-primary");
+        }, 2000);
+      }
+    });
+  }
+
+  // Support both vanilla DOM loading and Astro View Transitions
+  document.addEventListener("DOMContentLoaded", setupCopyButton);
+  document.addEventListener("astro:page-load", setupCopyButton);
+</script>
