@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Download, ShieldAlert, CheckCircle2, Terminal } from "@lucide/astro";
+import { Download, ShieldAlert, CheckCircle2 } from "@lucide/astro";
 import { Image } from "astro:assets";
 import windowsLayout from "../assets/windows-keyboard-layout.png";
 import windowsLanguageSelect from "../assets/windows-language-select.png";
@@ -33,13 +33,13 @@ import msDefender2 from "../assets/ms-defender-2.png";
       <Image
         src={windowsLayout}
         alt="Windows klaviatura terilmasi"
-        class="rounded-xl shadow-md max-w-full h-auto"
+        class="rounded-xl shadow-md max-w-full h-auto zoomable-img cursor-zoom-in hover:opacity-95 transition-opacity"
       />
 
       <a
         class="btn btn-lg btn-primary btn-wide rounded-2xl gap-2 shadow-md hover:shadow-lg transition-all"
-        href="/uz-new.zip"
-        download="uz-new.zip"
+        href="/new-uzb.zip"
+        download="new-uzb.zip"
       >
         <Download class="h-6 w-6" />
         <span>Yuklab olish (.ZIP)</span>
@@ -80,24 +80,23 @@ import msDefender2 from "../assets/ms-defender-2.png";
 
         <div class="bg-base-200/50 border border-base-300/60 p-5 rounded-2xl space-y-2">
           <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
-            <kbd class="kbd kbd-sm">Q</kbd>
+            <kbd class="kbd kbd-sm">“ ”</kbd>
           </div>
-          <h3 class="font-semibold text-lg">Standard QWERTY</h3>
+          <h3 class="font-semibold text-lg">Tipografik belgilar</h3>
           <p class="text-sm text-base-content/70 leading-relaxed">
-            Standart QWERTY terilmasiga asoslangan boʻlib, oʻrganish juda oson
-            va tez kechadi.
+            Matn yozishni qulaylashtirish uchun qoʻshtirnoqlar, en-dash (–) va
+            em-dash (—) qoʻshilgan.
           </p>
         </div>
 
         <div class="bg-base-200/50 border border-base-300/60 p-5 rounded-2xl space-y-2">
-          <!-- <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
-            <kbd class="kbd kbd-sm">Alt</kbd>
-          </div> -->
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            🇺🇿
+          </div>
           <h3 class="font-semibold text-lg">Rasmiy standart</h3>
           <p class="text-sm text-base-content/70 leading-relaxed">
             Yirik texnologik kompaniyalarga rasmiy taklif sifatida yuborilgan.
-            Hozirdanoq oʻrganib olsangiz, tez orada operatsion tizimlarga rasmiy
-            yangilanish kelganda koʻnikish shart boʻlmaydi.
+            Tez orada operatsion tizimlarga rasmiy kiritiladi.
           </p>
         </div>
       </div>
@@ -113,46 +112,54 @@ import msDefender2 from "../assets/ms-defender-2.png";
         <!-- Direct Characters Table -->
         <div class="bg-base-200/40 border border-base-300/60 rounded-2xl p-5 space-y-3">
           <h3 class="font-semibold text-lg text-primary flex items-center gap-2">
-            <span>🔤 Yangi harflar</span>
+            <span>🔤 Yangi harflar va belgilar</span>
           </h3>
           <div class="overflow-x-auto">
             <table class="table table-sm">
               <thead>
                 <tr>
-                  <th>Harf</th>
+                  <th>Natija</th>
                   <th>Bosiladigan tugma</th>
                 </tr>
               </thead>
               <tbody class="text-sm">
                 <tr>
                   <td>
-                    <b>ş harfi</b>
+                    <b>ş / Ş</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">;</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">;</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ç harfi</b>
+                    <b>ç / Ç</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">'</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">'</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ö harfi</b>
+                    <b>ö / Ö</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">[</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">[</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ğ harfi</b>
+                    <b>ğ / Ğ</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">]</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">]</kbd>
                   </td>
                 </tr>
@@ -161,12 +168,29 @@ import msDefender2 from "../assets/ms-defender-2.png";
                     <b>Tutuq belgisi (ʼ)</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">`</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ASCII qoʻshtirnoq (")</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">`</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Nuqta vergul (;)</b>
+                  </td>
+                  <td>
                     <kbd class="kbd kbd-sm">\</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ʻOkina belgisi (ʻ)</b>
+                    <b>Ikki nuqta (:)</b>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
@@ -178,52 +202,63 @@ import msDefender2 from "../assets/ms-defender-2.png";
           </div>
         </div>
 
-        <!-- AltGr Special Symbols Table -->
+        <!-- Typography & AltGr Symbols Table -->
         <div class="bg-base-200/40 border border-base-300/60 rounded-2xl p-5 space-y-3">
           <h3 class="font-semibold text-lg text-primary flex items-center gap-2">
-            <span>⌨️ Qoʻshimcha belgilar (AltGr bilan)</span>
+            <span>✨ Tipografik belgilar va qavslar</span>
           </h3>
           <div class="overflow-x-auto">
             <table class="table table-sm">
               <thead>
                 <tr>
                   <th>Belgi</th>
-                  <th>Kombinatsiya</th>
+                  <th>Kombinatsiya (AltGr)</th>
                 </tr>
               </thead>
               <tbody class="text-sm">
                 <tr>
-                  <td>
-                    Nuqta vergul <b>;</b>
-                  </td>
+                  <td>Qoʻshtirnoq “ va ”</td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">;</kbd>
+                    <kbd class="kbd kbd-sm">K</kbd> va{" "}
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">L</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Birtirnoq ‘ va ’</td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">K</kbd> va
+                    <br />
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">L</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    Ikki nuqta <b>:</b>
+                    Em dash <small>(—)</small>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">-</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    En dash <small>(–)</small>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
                     <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">;</kbd>
+                    <kbd class="kbd kbd-sm">-</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    Apostrof <b>'</b> / Qoʻshtirnoq <b>"</b>
-                  </td>
-                  <td>
-                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">'</kbd> /{" "}
-                    <kbd class="kbd kbd-sm">Shift</kbd>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Qavslar <b>[ ]</b>
+                    Qavslar <b>[</b> va <b>]</b>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
@@ -233,23 +268,13 @@ import msDefender2 from "../assets/ms-defender-2.png";
                 </tr>
                 <tr>
                   <td>
-                    Figurali qavslar <b>&#123; &#125;</b>
+                    Figurali qavslar <b>&#123;</b> va <b>&#125;</b>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
                     <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">[</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">[</kbd> yoki{" "}
                     <kbd class="kbd kbd-sm">]</kbd>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Slesh <b>\</b> / Tik chiziq <b>|</b>
-                  </td>
-                  <td>
-                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">\</kbd> /{" "}
-                    <kbd class="kbd kbd-sm">Shift</kbd>
                   </td>
                 </tr>
               </tbody>
@@ -276,11 +301,11 @@ import msDefender2 from "../assets/ms-defender-2.png";
             </h3>
             <p class="text-sm text-base-content/80">
               <a
-                href="/uz-new.zip"
-                download="uz-new.zip"
+                href="/new-uzb.zip"
+                download="new-uzb.zip"
                 class="link link-primary font-mono font-semibold"
               >
-                uz-new.zip
+                new-uzb.zip
               </a>{" "}
               arxiv faylini kompyuteringizga yuklab oling.
             </p>
@@ -344,12 +369,12 @@ import msDefender2 from "../assets/ms-defender-2.png";
                 <Image
                   src={msDefender1}
                   alt="Microsoft Defender Warning - Step 1"
-                  class="rounded-xl border border-warning/20 w-full h-auto object-contain shadow-xs"
+                  class="rounded-xl border border-warning/20 w-full h-auto object-contain shadow-xs zoomable-img cursor-zoom-in hover:opacity-95 transition-opacity"
                 />
                 <Image
                   src={msDefender2}
                   alt="Microsoft Defender Warning - Step 2"
-                  class="rounded-xl border border-warning/20 w-full h-auto object-contain shadow-xs"
+                  class="rounded-xl border border-warning/20 w-full h-auto object-contain shadow-xs zoomable-img cursor-zoom-in hover:opacity-95 transition-opacity"
                 />
               </div>
             </div>
@@ -365,15 +390,16 @@ import msDefender2 from "../assets/ms-defender-2.png";
               Klaviaturani tanlang
             </h3>
             <p class="text-sm text-base-content/80">
-              Windows til paneli (ekranning pastki oʻng burchagida) orqali{" "}
-              <b>Uzbek - new keyboard</b> terilmasini tanlang.
+              Kompyuterni qayta ishga tushiring (restart) va Windows til paneli
+              (ekranning pastki oʻng burchagida) orqali <b>Özbekça - yangi</b>{" "}
+              terilmasini tanlang.
             </p>
 
             <div class="flex justify-center pt-2">
               <Image
                 src={windowsLanguageSelect}
                 alt="Windows til tanlash menyusi"
-                class="rounded-xl border border-base-300 shadow-sm max-w-md w-full"
+                class="rounded-xl border border-base-300 shadow-sm max-w-md w-full zoomable-img cursor-zoom-in hover:opacity-95 transition-opacity"
               />
             </div>
           </div>
@@ -385,8 +411,8 @@ import msDefender2 from "../assets/ms-defender-2.png";
     <div class="text-center pt-4">
       <a
         class="btn btn-lg btn-primary btn-wide rounded-2xl gap-2 shadow-md hover:shadow-lg transition-all"
-        href="/uz-new.zip"
-        download="uz-new.zip"
+        href="/new-uzb.zip"
+        download="new-uzb.zip"
       >
         <Download class="h-6 w-6" />
         <span>Yuklab olish (.ZIP)</span>
