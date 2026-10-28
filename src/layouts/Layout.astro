@@ -11,9 +11,9 @@ interface Props {
 }
 
 const defaultTitle =
-  "Yangi oʻzbek alifbosi uchun klaviaturani yuklab olish | Ş, Ç, Ö, Ğ harflarini kiritish";
+  "Yangi özbek alifbosi uçun klaviaturani yuklab oliş | Ş, Ç, Ö, Ğ harflarini kiritiş";
 const defaultDescription =
-  "Windows, macOS va Linux uchun yangi alifbodagi Ş, Ç, Ö va Ğ harflarini kiritish uchun klaviatura fayllarini yuklab oling.";
+  "Windows, macOS va Linux uçun yangi alifbodagi Ş, Ç, Ö va Ğ harflarini kiritiş uçun klaviatura fayllarini yuklab oling.";
 const defaultImage = "/og-image.png";
 
 const {
@@ -24,7 +24,7 @@ const {
 } = Astro.props;
 
 const pageTitle =
-  title === defaultTitle ? title : `${title} | Yangi harflarni kiritish usuli`;
+  title === defaultTitle ? title : `${title} | Yangi harflarni kiritiş usuli`;
 const socialImageURL = new URL(image, Astro.url);
 ---
 
@@ -65,7 +65,7 @@ const socialImageURL = new URL(image, Astro.url);
             Reklama
           </span>
           <p class="text-base-content/80">
-            Bu yerda sizning reklamangiz boʻlishi mumkin edi. Murojaat uchun{" "}
+            Bu yerda sizning reklamangiz bölishi mumkin edi. Murojaat uçun{" "}
             <a
               href="https://t.me/kiritishuzbot"
               target="_blank"
