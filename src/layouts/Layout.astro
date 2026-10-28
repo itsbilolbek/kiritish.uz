@@ -56,6 +56,27 @@ const socialImageURL = new URL(image, Astro.url);
   <body class="flex min-h-screen flex-col overflow-x-hidden">
     <Header />
     <main class="flex-1 pb-16">
+      <aside
+        aria-label="Reklama"
+        class="bg-base-200 border-b border-base-300 px-4 py-2 text-center text-xs md:text-sm"
+      >
+        <div class="container mx-auto flex flex-wrap items-center justify-center gap-2">
+          <span class="badge badge-primary badge-sm font-medium uppercase">
+            Reklama
+          </span>
+          <p class="text-base-content/80">
+            Bu yerda sizning reklamangiz boʻlishi mumkin edi. Murojaat uchun{" "}
+            <a
+              href="https://t.me/kiritishuzbot"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link link-primary font-semibold underline underline-offset-2"
+            >
+              Telegram botga yozing
+            </a>
+          </p>
+        </div>
+      </aside>
       <slot />
     </main>
     <Footer />
