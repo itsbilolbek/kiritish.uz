@@ -6,7 +6,13 @@
     "prettier-plugin-tailwindcss"
   ],
   "tailwindStylesheet": "./src/styles/global.css",
-  "attributeGroups": ["^class$", "^(id|name)$", "^(type|src|href)$", "$DEFAULT", "^aria-"],
+  "attributeGroups": [
+    "^class$",
+    "^(id|name)$",
+    "^(type|src|href)$",
+    "$DEFAULT",
+    "^aria-"
+  ],
   "attributeSort": "ASC",
   "overrides": [
     {
