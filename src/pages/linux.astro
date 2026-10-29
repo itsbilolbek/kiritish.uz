@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Download, CheckCircle2, Terminal } from "@lucide/astro";
 import { Image } from "astro:assets";
-import windowsLayout from "../assets/linux-keyboard-layout.png";
+import windowsLayout from "../assets/windows-keyboard-layout.png";
 ---
 
 <Layout
@@ -96,46 +96,54 @@ import windowsLayout from "../assets/linux-keyboard-layout.png";
         <!-- Direct Characters Table -->
         <div class="bg-base-200/40 border border-base-300/60 rounded-2xl p-5 space-y-3">
           <h3 class="font-semibold text-lg text-primary flex items-center gap-2">
-            <span>🔤 Yangi harflar</span>
+            <span>🔤 Yangi harflar va belgilar</span>
           </h3>
           <div class="overflow-x-auto">
             <table class="table table-sm">
               <thead>
                 <tr>
-                  <th>Harf</th>
+                  <th>Natija</th>
                   <th>Bosiladigan tugma</th>
                 </tr>
               </thead>
               <tbody class="text-sm">
                 <tr>
                   <td>
-                    <b>ş harfi</b>
+                    <b>ş / Ş</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">;</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">;</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ç harfi</b>
+                    <b>ç / Ç</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">'</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">'</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ö harfi</b>
+                    <b>ö / Ö</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">[</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">[</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ğ harfi</b>
+                    <b>ğ / Ğ</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">]</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
                     <kbd class="kbd kbd-sm">]</kbd>
                   </td>
                 </tr>
@@ -144,12 +152,29 @@ import windowsLayout from "../assets/linux-keyboard-layout.png";
                     <b>Tutuq belgisi (ʼ)</b>
                   </td>
                   <td>
+                    <kbd class="kbd kbd-sm">`</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ASCII qöştirnoq (")</b>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">`</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Nuqta vergul (;)</b>
+                  </td>
+                  <td>
                     <kbd class="kbd kbd-sm">\</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>ʻOkina belgisi (ʻ)</b>
+                    <b>Ikki nuqta (:)</b>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
@@ -161,52 +186,63 @@ import windowsLayout from "../assets/linux-keyboard-layout.png";
           </div>
         </div>
 
-        <!-- AltGr Special Symbols Table -->
+        <!-- Typography & AltGr Symbols Table -->
         <div class="bg-base-200/40 border border-base-300/60 rounded-2xl p-5 space-y-3">
           <h3 class="font-semibold text-lg text-primary flex items-center gap-2">
-            <span>⌨️ Qöşimça belgilar (AltGr bilan)</span>
+            <span>✨ Tipografik belgilar va qavslar</span>
           </h3>
           <div class="overflow-x-auto">
             <table class="table table-sm">
               <thead>
                 <tr>
                   <th>Belgi</th>
-                  <th>Kombinatsiya</th>
+                  <th>Kombinatsiya (AltGr)</th>
                 </tr>
               </thead>
               <tbody class="text-sm">
                 <tr>
-                  <td>
-                    Nuqta vergul <b>;</b>
-                  </td>
+                  <td>Qöştirnoq “ va ”</td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">;</kbd>
+                    <kbd class="kbd kbd-sm">K</kbd> va{" "}
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">L</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Birtirnoq ‘ va ’</td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">K</kbd> va
+                    <br />
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">L</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    Ikki nuqta <b>:</b>
+                    Em dash <small>(—)</small>
+                  </td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">-</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    En dash <small>(–)</small>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
                     <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">;</kbd>
+                    <kbd class="kbd kbd-sm">-</kbd>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    Apostrof <b>'</b> / Qoʻshtirnoq <b>"</b>
-                  </td>
-                  <td>
-                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">'</kbd> /{" "}
-                    <kbd class="kbd kbd-sm">Shift</kbd>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Qavslar <b>[ ]</b>
+                    Qavslar <b>[</b> va <b>]</b>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
@@ -216,23 +252,28 @@ import windowsLayout from "../assets/linux-keyboard-layout.png";
                 </tr>
                 <tr>
                   <td>
-                    Figurali qavslar <b>&#123; &#125;</b>
+                    Figurali qavslar <b>&#123;</b> va <b>&#125;</b>
                   </td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
                     <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">[</kbd> /{" "}
+                    <kbd class="kbd kbd-sm">[</kbd> yoki{" "}
                     <kbd class="kbd kbd-sm">]</kbd>
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    Sleş <b>\</b> / Tik çiziq <b>|</b>
-                  </td>
+                  <td>Teskari sleş (\)</td>
                   <td>
                     <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
-                    <kbd class="kbd kbd-sm">\</kbd> /{" "}
-                    <kbd class="kbd kbd-sm">Shift</kbd>
+                    <kbd class="kbd kbd-sm">\</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tik çiziq (|)</td>
+                  <td>
+                    <kbd class="kbd kbd-sm">AltGr</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">Shift</kbd> +{" "}
+                    <kbd class="kbd kbd-sm">\</kbd>
                   </td>
                 </tr>
               </tbody>
@@ -261,7 +302,7 @@ import windowsLayout from "../assets/linux-keyboard-layout.png";
                 download="uz"
                 class="link link-primary font-mono font-semibold"
               >
-                uz
+                uz.txt
               </a>{" "}
               nomli klaviatura terilmasi faylini yuklab oling.
             </p>
@@ -284,7 +325,7 @@ import windowsLayout from "../assets/linux-keyboard-layout.png";
               manziliga köçiring (eski faylni zaxiralaş tavsiya etiladi):
             </p>
             <div class="mockup-code w-full text-xs md:text-sm">
-              <pre data-prefix="$"><code>sudo mv ~/Downloads/uz /usr/share/X11/xkb/symbols/uz</code></pre>
+              <pre data-prefix="$"><code>sudo mv ~/Downloads/uz.txt /usr/share/X11/xkb/symbols/uz</code></pre>
             </div>
           </div>
         </li>
